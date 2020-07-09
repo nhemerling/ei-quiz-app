@@ -192,6 +192,36 @@ function handleAnswerSubmit() {
       });
       
   }
+<<<<<<< HEAD
+=======
+    // find the HTML template for the right or wrong answer page depending
+
+    // if the last question, find the template for the final score page
+    //const nextPage = correctAnswerPageTemplate();
+    // render it to the DOM
+    //renderNextPage(nextPage);
+  //});
+//}
+  $('main').on('submit', function(event) {
+    event.preventDefault();
+    console.log('`handleAnswerSubmit` ran');
+    // find if the user got the question right or wrong
+    const userAns = $('input[name="ans"]').val();
+    const currentQuest = answerKey.questions[answerKey.questionNumber];
+    const currentAns = currentQuest.currentAnswer;
+    console.log(userAns);
+     // find the HTML template for the right or wrong answer page depending
+    // if the last question, find the template for the final score page
+    // render it to the DOM
+    if (userAns === currentAns) {
+      answerKey.score += 1;
+      $('main').html(correctAnswerPageTemplate);
+    } else {
+      $('main').html(wrongAnswerPageTemplate);
+    }
+  });
+}
+>>>>>>> adb87b93bbdd7e770ff04b79da90bd8f5d7c62ce
 
 function handleNextQuestionCLicked() {
   // this function will listen for when the next question button is clicked
