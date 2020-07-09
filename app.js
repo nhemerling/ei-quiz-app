@@ -124,9 +124,10 @@ function correctAnswerPageTemplate() {
                 <h2>Hooray! That's the correct answer.</h2>
                 <p>Move along to the next question.</p>
             </div>
-
             <div>
-                <button>Next Question</button>
+                <button class="next-question">
+                  <span>Next Question</span>
+                </button>
             </div>
           </div>`;
 }
@@ -141,7 +142,9 @@ function wrongAnswerPageTemplate() {
                 <p>The correct answer was: d. All of the above.</p>
             </div>
             <div>
-                <button>Next Question</button>
+              <button class="next-question">
+                <span>Next Question</span>
+              </button>
             </div>
           </div>`;
 }
@@ -157,10 +160,12 @@ function finalScorePageTemplate() {
             </div>
             <div class="quiz-container">
                 <h2>Great job! Here are your results.</h2>
-                <h3>Score: 3/5</h3>
+                <h3>${score} out of 5</h3>
             </div>
             <div>
-              <button>Retake Quiz</button>
+              <button class="retake-quiz">
+                <span>Retake Quiz</span>
+              </button>
             </div>
           </div>`;
 }
