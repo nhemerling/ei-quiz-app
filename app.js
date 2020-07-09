@@ -151,12 +151,17 @@ function finalScorePageTemplate() {
 
 function renderQuizPage() {
   $("main").html(homePageTemplate);
-  alert("i work")
 }
 
 $(renderQuizPage)
 
 
-
+//start quiz button
+function handleStartQuiz() {
+  $('#startQuiz').on('click',  (event => {
+    $("#main").html(generateQuestionPageTemplate)
+    console.log('`handleStartClicked` ran');
+  }));
+}
 
 
