@@ -152,11 +152,23 @@ function finalScorePageTemplate() {
 function renderQuizPage() {
   // accepts the HTML template and inserts it into the DOM
   $("main").html(homePageTemplate);
+<<<<<<< HEAD
+=======
   console.log('`renderQuizPage` ran');
+>>>>>>> 05ff149f12b062140afc4bcf55cfe39e2383e5cd
 }
 
 
 
+<<<<<<< HEAD
+//start quiz button
+function handleStartQuiz() {
+  $('#startQuiz').on('click',  (event => {
+    $("#main").html(generateQuestionPageTemplate)
+    console.log('`handleStartClicked` ran');
+  }));
+}
+=======
 function renderNextPage(template) {
   // accepts the HTML for the next page and inserts it into the DOM
   $('main').html(template);
@@ -166,6 +178,7 @@ function handleStartQuiz() {
   $('.quiz-container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
     $("main").html(questionPageTemplate);
+>>>>>>> 05ff149f12b062140afc4bcf55cfe39e2383e5cd
 
   });
 }
