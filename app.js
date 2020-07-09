@@ -1,9 +1,6 @@
 'use strict';
 
-/**
- * Example store structure
- */
-const store = {
+const answerKey = {
   // 5 or more questions are required
   questions: [
     {
@@ -62,24 +59,22 @@ const store = {
   score: 0
 };
 
-/**
- * 
- * Technical requirements:
- * 
- * Your app should include a render() function, that regenerates the view each time the store is updated. 
- * See your course material, consult your instructor, and reference the slides for more details.
- *
- * NO additional HTML elements should be added to the index.html file.
- *
- * You may add attributes (classes, ids, etc) to the existing HTML elements, or link stylesheets or additional scripts if necessary
- *
- * SEE BELOW FOR THE CATEGORIES OF THE TYPES OF FUNCTIONS YOU WILL BE CREATING 👇
- * 
- */
 
-/********** TEMPLATE GENERATION FUNCTIONS **********/
+function renderQuizPage() {
+  $("main").append(
+  `<div class="container">
+  <div class="img-container">
+  <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
+  </div>
+  <div class="quiz-container">
+  <button>Start Quiz</button>
+  </div>
+  </div>`);
+}
 
-// These functions return HTML templates
+
+
+$(renderQuizPage)
 
 function homePageTemplate() {
   // this function will return the HTML template for the home page
@@ -223,3 +218,5 @@ function handleRetakeQuizClicked() {
   // find the template for the home page
   // render it to the DOM
 }
+
+
