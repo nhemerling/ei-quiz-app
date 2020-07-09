@@ -74,7 +74,7 @@ function homePageTemplate() {
           </div>`;
 }
 
-function questionPageTemplate() {
+function generateQuestionPageTemplate() {
   // this function will return the HTML template for the next question
   return `<div class="quiz-container">
           <div>
@@ -148,44 +148,20 @@ function finalScorePageTemplate() {
 // This function conditionally replaces the contents of the <main> tag based on the state of the store//
 
 
+
 function renderQuizPage() {
-  // accepts the HTML template and inserts it into the DOM
   $("main").html(homePageTemplate);
-<<<<<<< HEAD
-=======
-  console.log('`renderQuizPage` ran');
->>>>>>> 05ff149f12b062140afc4bcf55cfe39e2383e5cd
 }
 
+$(renderQuizPage)
 
 
-<<<<<<< HEAD
 //start quiz button
 function handleStartQuiz() {
-  $('#startQuiz').on('click',  (event => {
+  $('#startQuiz').on('click', n (event => {
     $("#main").html(generateQuestionPageTemplate)
     console.log('`handleStartClicked` ran');
   }));
 }
-=======
-function renderNextPage(template) {
-  // accepts the HTML for the next page and inserts it into the DOM
-  $('main').html(template);
-}
 
-function handleStartQuiz() {
-  $('.quiz-container').on('click', '.start-quiz', event => {
-    console.log('`handleStartClicked` ran');
-    $("main").html(questionPageTemplate);
->>>>>>> 05ff149f12b062140afc4bcf55cfe39e2383e5cd
 
-  });
-}
-
-function main() {
-  renderQuizPage();
-  renderNextPage();
-  handleStartQuiz();
-}
-
-$(main());
