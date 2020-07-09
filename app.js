@@ -60,21 +60,21 @@ const answerKey = {
 };
 
 
-function renderQuizPage() {
-  $("main").append(
-  `<div class="container">
-  <div class="img-container">
-  <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
-  </div>
-  <div class="quiz-container">
-  <button>Start Quiz</button>
-  </div>
-  </div>`);
-}
+// function renderQuizPage() {
+//   $("main").append(
+//   `<div class="container">
+//   <div class="img-container">
+//   <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
+//   </div>
+//   <div class="quiz-container">
+//   <button>Start Quiz</button>
+//   </div>
+//   </div>`);
+// }
 
 
 
-$(renderQuizPage)
+// $(renderQuizPage)
 
 function homePageTemplate() {
   // this function will return the HTML template for the home page
@@ -90,7 +90,7 @@ function homePageTemplate() {
           </div>`;
 }
 
-function generateQuestionPageTemplate() {
+function questionPageTemplate() {
   // this function will return the HTML template for the next question
   return `<div class="quiz-container">
             <div>
@@ -165,15 +165,33 @@ function finalScorePageTemplate() {
           </div>`;
 }
 
+// function selectTemplate(page) {
+//   if (page==='home') {
+//     homePageTemplate();
+//   } else if (page==='question') {
+//     questionPageTemplate();
+//   } else if (page==='correct') {
+//     correctAnswerPageTemplate();
+//   } else if (page==='wrong') {
+//     wrongAnswerPageTemplate();
+//   } else {
+//     finalScorePageTemplate();
+//   }
+// }
+
 /********** RENDER FUNCTION(S) **********/
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
 
-function renderQuizPage(nextTemplate) {
+function renderQuizPage(template) {
   // accepts the HTML template and inserts it into the DOM
   console.log('`renderQuizPage` ran');
-  $('main').html(nextTemplate);
+  if (template===undefined) {
+    $('main').html(homePageTemplate())
+  } else {
+  $('main').html(template);
+  }
 }
 
 /********** EVENT HANDLER FUNCTIONS **********/
@@ -185,9 +203,9 @@ function handleStartClicked() {
   $('.quiz-container').on('click', '.start-quiz' event => {
     console.log('`handleStartClicked` ran');
     // find the HTML template for the first question
-
+    const questPage = questionPageTemplate();
     // and render it to the DOM
-    renderQuizPage();
+    renderQuizPage(questPage);
   });
 }
 
@@ -220,3 +238,9 @@ function handleRetakeQuizClicked() {
 }
 
 
+function main() {
+  renderQuizPage();
+  handleStartClicked();
+}
+
+$(main());
