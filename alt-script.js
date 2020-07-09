@@ -16,7 +16,6 @@ function renderQuizPage(nextTemplate) {
       $(#"main").html(generateQuestionPageTemplate)
       // find the HTML template for the first question
       // and render it to the DOM
-      $(renderQuizPage);
     }));
   }
   
@@ -47,4 +46,11 @@ function renderQuizPage(nextTemplate) {
     // find the template for the home page
     // render it to the DOM
   }
+
+  function main() {
+    renderQuizPage();
+    handleStartClicked();
+  }
+  
+  $(main());
   
