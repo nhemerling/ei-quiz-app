@@ -177,4 +177,4 @@ function main() {
   handleStartQuiz();
 }
 
-$(main());
+$(main);
