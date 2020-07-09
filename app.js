@@ -76,7 +76,7 @@ function homePageTemplate() {
 
 function questionPageTemplate() {
   // this function will return the HTML template for the next question
-  const question = answerKey.questions[0];
+  const question = answerKey.questions[answerKey.questionNumber];
   return `<div class="quiz-container">
           <div>
           <h2>
@@ -105,7 +105,7 @@ function correctAnswerPageTemplate() {
           <p>Move along to the next question.</p>
           </div>
           <div>
-          <button>Next Question</button>
+          <button class="next-question">Next Question</button>
           </div>
           </div>`;
 }
@@ -120,7 +120,7 @@ function wrongAnswerPageTemplate() {
           <p>The correct answer was: d. All of the above.</p>
           </div>
           <div>
-          <button>Next Question</button>
+          <button class="next-question">Next Question</button>
           </div>
           </div>`;
 }
@@ -155,6 +155,7 @@ function renderQuizPage() {
   console.log('`renderQuizPage` ran');
 }
 
+<<<<<<< HEAD
 
 
 function renderNextPage(template) {
@@ -163,6 +164,8 @@ function renderNextPage(template) {
 }
 
 
+=======
+>>>>>>> 4f8a54d92fdb4781bc076b602e0d9f5d0e7ae37d
 /********** EVENT HANDLER FUNCTIONS **********/
 const correctCount = 0;
 const quizNumberCount = 0;
@@ -178,6 +181,7 @@ function handleStartQuiz() {
 
 function handleAnswerSubmit() {
   // this function will listen for when the start button is clicked
+<<<<<<< HEAD
   $('main').on("submit", function(event) {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
@@ -199,12 +203,46 @@ function handleAnswerSubmit() {
     //renderNextPage(nextPage);
   //});
 //}
+=======
+  $('main').on('submit', function(event) {
+    event.preventDefault();
+    console.log('`handleAnswerSubmit` ran');
+    // find if the user got the question right or wrong
+    const userAns = $('input[name="ans"]').val();
+    const currentQuest = answerKey.questions[answerKey.questionNumber];
+    const currentAns = currentQuest.currentAnswer;
+    console.log(userAns);
+     // find the HTML template for the right or wrong answer page depending
+    // if the last question, find the template for the final score page
+    if (userAns === currentAns) {
+      answerKey.score += 1;
+      $('main').html(correctAnswerPageTemplate);
+    } else {
+      $('main').html(wrongAnswerPageTemplate);
+    }
+    // render it to the DOM
+    $('main').html(correctAnswerPageTemplate);
+  });
+}
+
+function handleNextQuestionCLicked() {
+  // this function will listen for when the next question button is clicked
+  $('main').on('click', '.next-question', event => {
+    console.log('`handNextQuestionClicked` ran');
+    // update question template with next question
+    answerKey.questionNumber += 1;
+    // render it to the DOM
+    $("main").html(questionPageTemplate);
+  });
+}
+>>>>>>> 4f8a54d92fdb4781bc076b602e0d9f5d0e7ae37d
 
 function main() {
   renderQuizPage();
-  renderNextPage();
   handleStartQuiz();
   handleAnswerSubmit();
+  handleNextQuestionCLicked();
+
 }
 
 $(main);
