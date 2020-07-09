@@ -6,6 +6,32 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
-.image {
-  width: 400px;
+html, body {
+  margin:0px;
+  padding:0px;
 }
+
+header, body {
+  text-align: center;
+  margin:10px;
+}
+.image {
+  max-width: 80%;
+  justify-content: center;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.img-container {
+  flex: 1;
+  
+}
+
+.quiz-container {
+  flex: 1;
+}
+
