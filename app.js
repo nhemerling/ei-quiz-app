@@ -155,17 +155,6 @@ function renderQuizPage() {
   console.log('`renderQuizPage` ran');
 }
 
-<<<<<<< HEAD
-
-
-function renderNextPage(template) {
-  // accepts the HTML for the next page and inserts it into the DOM
-  $('main').html(template);
-}
-
-
-=======
->>>>>>> 4f8a54d92fdb4781bc076b602e0d9f5d0e7ae37d
 /********** EVENT HANDLER FUNCTIONS **********/
 const correctCount = 0;
 const quizNumberCount = 0;
@@ -181,7 +170,6 @@ function handleStartQuiz() {
 
 function handleAnswerSubmit() {
   // this function will listen for when the start button is clicked
-<<<<<<< HEAD
   $('main').on("submit", function(event) {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
@@ -203,7 +191,6 @@ function handleAnswerSubmit() {
     //renderNextPage(nextPage);
   //});
 //}
-=======
   $('main').on('submit', function(event) {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
@@ -234,7 +221,6 @@ function handleNextQuestionCLicked() {
     $("main").html(questionPageTemplate);
   });
 }
->>>>>>> 4f8a54d92fdb4781bc076b602e0d9f5d0e7ae37d
 
 function main() {
   renderQuizPage();
