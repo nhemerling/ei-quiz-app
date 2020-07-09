@@ -86,10 +86,10 @@ function questionPageTemplate() {
           <div>
           <form id="quiz-form">
           <p> What is your answer? </p>
-          <input type="radio" name = "ans" value="">${question.answers[0]}</br>
-          <input type="radio" name = "ans" value="">${question.answers[1]}</br>
-          <input type="radio" name = "ans" value="">${question.answers[2]}</br>
-          <input type="radio" name = "ans" value="">${question.answers[3]}</br>
+          <input type="radio" name = "ans" value="${question.answers[0]}">${question.answers[0]}</br>
+          <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
+          <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
+          <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
           <button type="submit">Submit!</button>
           </form>
           </div>
@@ -162,7 +162,10 @@ function renderNextPage(template) {
   $('main').html(template);
 }
 
+
 /********** EVENT HANDLER FUNCTIONS **********/
+const correctCount = 0;
+const quizNumberCount = 0;
 
 function handleStartQuiz() {
   $('.quiz-container').on('click', '.start-quiz', event => {
@@ -175,19 +178,27 @@ function handleStartQuiz() {
 
 function handleAnswerSubmit() {
   // this function will listen for when the start button is clicked
-  $('#quiz-form').submit(function(event) {
+  $('main').on("submit", function(event) {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
     // find if the user got the question right or wrong
-
+          if($('input[name="ans"]').prop('checked') == `${answerKey.questions.correctAnswer}`){
+              alert('Yes!');
+              correctCount ++; 
+          }else{
+              console.log('NOOOOOOOOO!');
+          } 
+      });
+      
+  }
     // find the HTML template for the right or wrong answer page depending
 
     // if the last question, find the template for the final score page
-    const nextPage = correctAnswerPageTemplate();
+    //const nextPage = correctAnswerPageTemplate();
     // render it to the DOM
-    renderNextPage(nextPage);
-  });
-}
+    //renderNextPage(nextPage);
+  //});
+//}
 
 function main() {
   renderQuizPage();
