@@ -1,5 +1,5 @@
 'use strict';
-
+//ANSWER KEY IS FINISHED
 const answerKey = {
   // 5 or more questions are required
   questions: [
@@ -59,10 +59,7 @@ const answerKey = {
   score: 0
 };
 
-//so this is both the home page and the template, kind of two for one. it runs without anything else needing to be thrown into it.
-// we can use this as a beginning for our app, as well as a return for the end of our app. we can plug this function into the restart test button.
-//instead of appending it, I am looking for a different way to replace the main body with all this info. maybe replace?
-
+//TEMPLATES ARE COMPLETE
 function homePageTemplate() {
   // this function will return the HTML template for the home page
   return `<div class="container">
@@ -146,69 +143,36 @@ function finalScorePageTemplate() {
           </div>`;
 }
 
-//********** RENDER FUNCTION(S) **********
+//********** RENDER FUNCTION(S) **********//
 
-// This function conditionally replaces the contents of the <main> tag based on the state of the store
+// This function conditionally replaces the contents of the <main> tag based on the state of the store//
+
 
 function renderQuizPage() {
   // accepts the HTML template and inserts it into the DOM
   $("main").html(homePageTemplate);
-  alert("i work")
+  console.log('`renderQuizPage` ran');
 }
 
-$(renderQuizPage)
 
-/********** EVENT HANDLER FUNCTIONS **********/
 
-// These functions handle events (submit, click, etc)
+function renderNextPage(template) {
+  // accepts the HTML for the next page and inserts it into the DOM
+  $('main').html(template);
+}
 
 function handleStartQuiz() {
-  // this function will listen for when the start button is clicked
-  //and load the form page for the questions, starting with the first question
   $('.quiz-container').on('click', '.start-quiz' (event => {
     console.log('`handleStartClicked` ran');
-    $(#"main").html(generateQuestionPageTemplate)
-    // find the HTML template for the first question
-    const questPage = questionPageTemplate();
-    // and render it to the DOM
-    // renderQuizPage(questPage);
-  });
-    $(renderQuizPage);
+    $("main").html(questionPageTemplate);
+
   }));
 }
 
-function handleAnswerSubmit() {
-  // this function will listen for when the start button is clicked
-  $('.quiz-form').submit(function(event) {
-    event.preventDefault();
-    console.log('`handleAnswerSubmit` ran');
-    // find if the user got the question right or wrong
-
-    // find the HTML template for the right or wrong answer page depending
-
-    // if the last question, find the template for the final score page
-
-    // render it to the DOM
-    renderQuizPage();
-  });
-}
-
-function handleNextQuestionCLicked() {
-  // this function will listen for when the next question button is clicked
-  // find the template for the next question
-  // render it to the DOM
-}
-
-function handleRetakeQuizClicked() {
-  // this function will listen for when the retake quiz button is clicked
-  // find the template for the home page
-  // render it to the DOM
-}
-
-
 function main() {
   renderQuizPage();
-  handleStartClicked();
+  renderNextPage();
+  handleStartQuiz();
 }
 
 $(main());
