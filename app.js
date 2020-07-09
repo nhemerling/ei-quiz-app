@@ -76,6 +76,7 @@ function homePageTemplate() {
 
 function generateQuestionPageTemplate() {
   // this function will return the HTML template for the next question
+  const question = answerKey.questions[0];
   return `<div class="quiz-container">
           <div>
           <h2>
