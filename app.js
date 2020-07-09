@@ -155,17 +155,6 @@ function renderQuizPage() {
   console.log('`renderQuizPage` ran');
 }
 
-<<<<<<< HEAD
-
-
-function renderNextPage(template) {
-  // accepts the HTML for the next page and inserts it into the DOM
-  $('main').html(template);
-}
-
-
-=======
->>>>>>> 4f8a54d92fdb4781bc076b602e0d9f5d0e7ae37d
 /********** EVENT HANDLER FUNCTIONS **********/
 const correctCount = 0;
 const quizNumberCount = 0;
@@ -181,48 +170,28 @@ function handleStartQuiz() {
 
 function handleAnswerSubmit() {
   // this function will listen for when the start button is clicked
-<<<<<<< HEAD
   $('main').on("submit", function(event) {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
     // find if the user got the question right or wrong
-          if($('input[name="ans"]').prop('checked') == `${answerKey.questions.correctAnswer}`){
-              alert('Yes!');
+          
+      const answer = answerKey.questions[answerKey.questionNumber].correctAnswer;
+      const selectedAnswer = $('input[name="ans"]:checked').val();
+      
+      console.log(answer);
+      console.log(selectedAnswer);
+      
+      if (selectedAnswer === answer){
+              $('main').html(correctAnswerPageTemplate);
               correctCount ++; 
           }else{
-              console.log('NOOOOOOOOO!');
+            $('main').html(wrongAnswerPageTemplate);  
+            console.log('NOOOOOOOOO!');
+            
           } 
       });
       
   }
-    // find the HTML template for the right or wrong answer page depending
-
-    // if the last question, find the template for the final score page
-    //const nextPage = correctAnswerPageTemplate();
-    // render it to the DOM
-    //renderNextPage(nextPage);
-  //});
-//}
-=======
-  $('main').on('submit', function(event) {
-    event.preventDefault();
-    console.log('`handleAnswerSubmit` ran');
-    // find if the user got the question right or wrong
-    const userAns = $('input[name="ans"]').val();
-    const currentQuest = answerKey.questions[answerKey.questionNumber];
-    const currentAns = currentQuest.currentAnswer;
-    console.log(userAns);
-     // find the HTML template for the right or wrong answer page depending
-    // if the last question, find the template for the final score page
-    // render it to the DOM
-    if (userAns === currentAns) {
-      answerKey.score += 1;
-      $('main').html(correctAnswerPageTemplate);
-    } else {
-      $('main').html(wrongAnswerPageTemplate);
-    }
-  });
-}
 
 function handleNextQuestionCLicked() {
   // this function will listen for when the next question button is clicked
@@ -234,7 +203,6 @@ function handleNextQuestionCLicked() {
     $("main").html(questionPageTemplate);
   });
 }
->>>>>>> 4f8a54d92fdb4781bc076b602e0d9f5d0e7ae37d
 
 function main() {
   renderQuizPage();
