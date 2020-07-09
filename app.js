@@ -148,7 +148,7 @@ function finalScorePageTemplate() {
           <h3>Final Score: ${answerKey.score}/5</h3>
           </div>
           <div>
-          <button>Retake Quiz</button>
+          <button class="retake-quiz">Retake Quiz</button>
           </div>
           </div>`;
 }
@@ -216,12 +216,22 @@ function handleNextQuestionCLicked() {
   });
 }
 
+function handleRetakeQuizClicked() {
+  // this function will listen for when the retake quiz button is clicked
+  $('main').on('click', '.retake-quiz', event => {
+    console.log('`handleRetakeQuizClicked` ran');
+    location.reload(true);
+    // render it to the DOM
+    $(renderQuizPage);
+  });
+}
+
 function main() {
   renderQuizPage();
   handleStartQuiz();
   handleAnswerSubmit();
   handleNextQuestionCLicked();
-
+  handleRetakeQuizClicked();
 }
 
 $(main);
