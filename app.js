@@ -162,11 +162,11 @@ function renderNextPage(template) {
 }
 
 function handleStartQuiz() {
-  $('.quiz-container').on('click', '.start-quiz' (event => {
+  $('.quiz-container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
     $("main").html(questionPageTemplate);
 
-  }));
+  });
 }
 
 function main() {
