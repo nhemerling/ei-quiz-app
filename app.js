@@ -59,7 +59,9 @@ const answerKey = {
   score: 0
 };
 
-
+//so this is both the home page and the template, kind of two for one. it runs without anything else needing to be thrown into it.
+// we can use this as a beginning for our app, as well as a return for the end of our app. we can plug this function into the restart test button.
+//instead of appending it, I am looking for a different way to replace the main body with all this info. maybe replace?
 function renderQuizPage() {
   $("main").append(
   `<div class="container">
@@ -72,11 +74,6 @@ function renderQuizPage() {
   </div>`);
   alert("i work")
 }
-
-<<<<<<< HEAD
-$(renderQuizPage)
-=======
-
 
 $(renderQuizPage)
 
@@ -123,10 +120,9 @@ function correctAnswerPageTemplate() {
                 <h2>Hooray! That's the correct answer.</h2>
                 <p>Move along to the next question.</p>
             </div>
+
             <div>
-                <button class="next-question">
-                  <span>Next Question</span>
-                </button>
+                <button>Next Question</button>
             </div>
           </div>`;
 }
@@ -141,9 +137,7 @@ function wrongAnswerPageTemplate() {
                 <p>The correct answer was: d. All of the above.</p>
             </div>
             <div>
-              <button class="next-question">
-                <span>Next Question</span>
-              </button>
+                <button>Next Question</button>
             </div>
           </div>`;
 }
@@ -159,12 +153,10 @@ function finalScorePageTemplate() {
             </div>
             <div class="quiz-container">
                 <h2>Great job! Here are your results.</h2>
-                <h3>${score} out of 5</h3>
+                <h3>Score: 3/5</h3>
             </div>
             <div>
-              <button class="retake-quiz">
-                <span>Retake Quiz</span>
-              </button>
+              <button>Retake Quiz</button>
             </div>
           </div>`;
 }
@@ -186,13 +178,13 @@ function renderQuizPage(nextTemplate) {
 
 function handleStartClicked() {
   // this function will listen for when the start button is clicked
-  $('.quiz-container').on('click', '.start-quiz' event => {
+  $('.quiz-container').on('click', '.start-quiz' (event => {
     console.log('`handleStartClicked` ran');
     // find the HTML template for the first question
 
     // and render it to the DOM
     renderQuizPage();
-  });
+  }));
 }
 
 function handleAnswerSubmit() {
@@ -222,6 +214,3 @@ function handleRetakeQuizClicked() {
   // find the template for the home page
   // render it to the DOM
 }
-
-
->>>>>>> fc47beb4f37b7bec2143f95a163151fdcba23677
