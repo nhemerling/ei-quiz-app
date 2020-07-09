@@ -74,7 +74,7 @@ function homePageTemplate() {
           </div>`;
 }
 
-function generateQuestionPageTemplate() {
+function questionPageTemplate() {
   // this function will return the HTML template for the next question
   const question = answerKey.questions[0];
   return `<div class="quiz-container">
@@ -159,10 +159,10 @@ $(renderQuizPage)
 
 //start quiz button
 function handleStartQuiz() {
-  $('#startQuiz').on('click', n (event => {
-    $("#main").html(generateQuestionPageTemplate)
+  $('.quiz-container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
+    $("main").html(questionPageTemplate)
+    
   }));
 }
 
-testing
