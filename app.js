@@ -108,7 +108,7 @@ function correctAnswerPageTemplate() {
           <p>Move along to the next question.</p>
           </div>
           <div>
-          <button class="next-question">Next Question</button>
+          <button class="next-question">Next</button>
           </div>
           <div>
           <h2>Current Score: ${answerKey.score}/5<h2>
@@ -126,7 +126,7 @@ function wrongAnswerPageTemplate() {
           <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
           </div>
           <div>
-          <button class="next-question">Next Question</button>
+          <button class="next-question">Next</button>
           </div>
           <div>
           <h2>Current Score: ${answerKey.score}/5<h2>
@@ -194,7 +194,6 @@ function handleAnswerSubmit() {
           }else{
             $('main').html(wrongAnswerPageTemplate);  
             console.log('NOOOOOOOOO!');
-            
           } 
       });
       
@@ -205,9 +204,15 @@ function handleNextQuestionCLicked() {
   $('main').on('click', '.next-question', event => {
     console.log('`handNextQuestionClicked` ran');
     // update question template with next question
-    answerKey.questionNumber += 1;
+    answerKey.questionNumber ++;
     // render it to the DOM
-    $("main").html(questionPageTemplate);
+    if (answerKey.questionNumber < 5) {
+      $("main").html(questionPageTemplate);
+    } else {
+      console.log("working");
+      $("main").html(finalScorePageTemplate);
+    }
+   
   });
 }
 
