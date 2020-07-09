@@ -93,6 +93,9 @@ function questionPageTemplate() {
           <button type="submit">Submit!</button>
           </form>
           </div>
+          <div>
+          <h2>Current Score: ${answerKey.score}/5<h2>
+          </div>
           </div>`;
 }
 
@@ -106,6 +109,9 @@ function correctAnswerPageTemplate() {
           </div>
           <div>
           <button class="next-question">Next Question</button>
+          </div>
+          <div>
+          <h2>Current Score: ${answerKey.score}/5<h2>
           </div>
           </div>`;
 }
@@ -122,6 +128,9 @@ function wrongAnswerPageTemplate() {
           <div>
           <button class="next-question">Next Question</button>
           </div>
+          <div>
+          <h2>Current Score: ${answerKey.score}/5<h2>
+          </div>
           </div>`;
 }
 
@@ -136,7 +145,7 @@ function finalScorePageTemplate() {
           </div>
           <div class="quiz-container">
           <h2>Great job! Here are your results.</h2>
-          <h3>Score: 3/5</h3>
+          <h3>Final Score: ${answerKey.score}/5</h3>
           </div>
           <div>
           <button>Retake Quiz</button>
@@ -156,8 +165,6 @@ function renderQuizPage() {
 }
 
 /********** EVENT HANDLER FUNCTIONS **********/
-const correctCount = 0;
-const quizNumberCount = 0;
 
 function handleStartQuiz() {
   $('.quiz-container').on('click', '.start-quiz', event => {
@@ -182,8 +189,8 @@ function handleAnswerSubmit() {
       console.log(selectedAnswer);
       
       if (selectedAnswer === answer){
+              answerKey.score ++;
               $('main').html(correctAnswerPageTemplate);
-              correctCount ++; 
           }else{
             $('main').html(wrongAnswerPageTemplate);  
             console.log('NOOOOOOOOO!');
