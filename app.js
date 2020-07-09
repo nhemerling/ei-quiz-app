@@ -93,6 +93,9 @@ function questionPageTemplate() {
           <button type="submit">Submit!</button>
           </form>
           </div>
+          <div>
+          <h2>Current Score: ${answerKey.score} out of 5</h2>
+          </div>
           </div>`;
 }
 
@@ -106,6 +109,9 @@ function correctAnswerPageTemplate() {
           </div>
           <div>
           <button class="next-question">Next Question</button>
+          </div>
+          <div>
+          <h2>Current Score: ${answerKey.score} out of 5</h2>
           </div>
           </div>`;
 }
@@ -122,6 +128,9 @@ function wrongAnswerPageTemplate() {
           <div>
           <button class="next-question">Next Question</button>
           </div>
+          <div>
+          <h2>Current Score: ${answerKey.score} out of 5</h2>
+          </div>
           </div>`;
 }
 
@@ -136,7 +145,7 @@ function finalScorePageTemplate() {
           </div>
           <div class="quiz-container">
           <h2>Great job! Here are your results.</h2>
-          <h3>Score: 3/5</h3>
+          <h3>Final Score: ${answerKey.score}/5</h3>
           </div>
           <div>
           <button>Retake Quiz</button>
@@ -174,46 +183,22 @@ function handleAnswerSubmit() {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
     // find if the user got the question right or wrong
-    
-    const answer = answerKey.questions[answerKey.questionNumber].correctAnswer;
-    console.log(answer);
-    console.log($('input[name="ans"]').prop('checked'));
-          if($('input[name="ans"]').prop('checked') === `${answer}`){
-              alert('Yes!');
-              correctCount ++; 
+          
+      const answer = answerKey.questions[answerKey.questionNumber].correctAnswer;
+      const selectedAnswer = $('input[name="ans"]:checked').val();
+      
+      console.log(answer);
+      console.log(selectedAnswer);
+      
+      if (selectedAnswer === answer){
+              answerKey.score ++;
+              $('main').html(correctAnswerPageTemplate);
           }else{
-              console.log('NOOOOOOOOO!');
+            $('main').html(wrongAnswerPageTemplate);  
+            console.log('NOOOOOOOOO!');
           } 
       });
-      
   }
-    // find the HTML template for the right or wrong answer page depending
-
-    // if the last question, find the template for the final score page
-    //const nextPage = correctAnswerPageTemplate();
-    // render it to the DOM
-    //renderNextPage(nextPage);
-  //});
-//}
-//   $('main').on('submit', function(event) {
-//     event.preventDefault();
-//     console.log('`handleAnswerSubmit` ran');
-//     // find if the user got the question right or wrong
-//     const userAns = $('input[name="ans"]').val();
-//     const currentQuest = answerKey.questions[answerKey.questionNumber];
-//     const currentAns = currentQuest.currentAnswer;
-//     console.log(userAns);
-//      // find the HTML template for the right or wrong answer page depending
-//     // if the last question, find the template for the final score page
-//     // render it to the DOM
-//     if (userAns === currentAns) {
-//       answerKey.score += 1;
-//       $('main').html(correctAnswerPageTemplate);
-//     } else {
-//       $('main').html(wrongAnswerPageTemplate);
-//     }
-//   });
-// }
 
 function handleNextQuestionCLicked() {
   // this function will listen for when the next question button is clicked
