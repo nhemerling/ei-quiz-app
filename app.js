@@ -88,7 +88,9 @@ function homePageTemplate() {
                 <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
             </div>
             <div class="quiz-container">
-                <button>Start Quiz</button>
+                <button class="start-quiz">
+                  <span class="button-label">Start Quiz</span>
+                </button>
             </div>
           </div>`;
 }
@@ -98,17 +100,17 @@ function generateQuestionPageTemplate() {
   return `<div class="quiz-container">
             <div>
                 <h2>
-                    <p>What Disaster happened in August of 2020?</p>
+                    <p>${question.question}</p>
                 </h2>
             </div>
             <div>
                 <form class ="quiz-form">
                     <p> What is your answer? </p>
-                    <input type="radio" name = "ans" value=""> Answer 1 </br>
-                    <input type="radio" name = "ans" value=""> Answer 2 </br>
-                    <input type="radio" name = "ans" value=""> Answer 3 </br>
-                    <input type="radio" name = "ans" value=""> Answer 4 </br>
-                    <button type="button">Submit!</button>
+                    <input type="radio" name = "ans" value="">${question.answers[0]}</br>
+                    <input type="radio" name = "ans" value="">${question.answers[1]}</br>
+                    <input type="radio" name = "ans" value="">${question.answers[2]}</br>
+                    <input type="radio" name = "ans" value="">${question.answers[3]}</br>
+                    <button type="submit">Submit!</button>
                 </form>
             </div>
           </div>`;
@@ -167,9 +169,11 @@ function finalScorePageTemplate() {
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
-function renderQuizPage() {
-  // find the HTML template and 
-  // insert it into the DOM
+
+function renderQuizPage(nextTemplate) {
+  // accepts the HTML template and inserts it into the DOM
+  console.log('`renderQuizPage` ran');
+  $('main').html(nextTemplate);
 }
 
 /********** EVENT HANDLER FUNCTIONS **********/
@@ -178,16 +182,29 @@ function renderQuizPage() {
 
 function handleStartClicked() {
   // this function will listen for when the start button is clicked
-  // find the HTML template for the first question
-  // and render it to the DOM
+  $('.quiz-container').on('click', '.start-quiz' event => {
+    console.log('`handleStartClicked` ran');
+    // find the HTML template for the first question
+
+    // and render it to the DOM
+    renderQuizPage();
+  });
 }
 
 function handleAnswerSubmit() {
   // this function will listen for when the start button is clicked
-  // find if the user got the question right or wrong
-  // find the HTML template for the right or wrong answer page depending
-  // if the last question, find the template for the final score page
-  // render it to the DOM
+  $('.quiz-form').submit(function(event) {
+    event.preventDefault();
+    console.log('`handleAnswerSubmit` ran');
+    // find if the user got the question right or wrong
+
+    // find the HTML template for the right or wrong answer page depending
+
+    // if the last question, find the template for the final score page
+
+    // render it to the DOM
+    renderQuizPage();
+  });
 }
 
 function handleNextQuestionCLicked() {
