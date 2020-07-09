@@ -59,55 +59,42 @@ const answerKey = {
   score: 0
 };
 
-
-// function renderQuizPage() {
-//   $("main").append(
-//   `<div class="container">
-//   <div class="img-container">
-//   <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
-//   </div>
-//   <div class="quiz-container">
-//   <button>Start Quiz</button>
-//   </div>
-//   </div>`);
-// }
-
-
-
-// $(renderQuizPage)
+//so this is both the home page and the template, kind of two for one. it runs without anything else needing to be thrown into it.
+// we can use this as a beginning for our app, as well as a return for the end of our app. we can plug this function into the restart test button.
+//instead of appending it, I am looking for a different way to replace the main body with all this info. maybe replace?
 
 function homePageTemplate() {
   // this function will return the HTML template for the home page
   return `<div class="container">
-            <div class="img-container">
-                <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
-            </div>
-            <div class="quiz-container">
-                <button class="start-quiz">
-                  <span class="button-label">Start Quiz</span>
-                </button>
-            </div>
+          <div class="img-container">
+          <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
+          </div>
+          <div class="quiz-container">
+          <button class="start-quiz">
+          <span class="button-label">Start Quiz</span>
+          </button>
+          </div>
           </div>`;
 }
 
 function questionPageTemplate() {
   // this function will return the HTML template for the next question
   return `<div class="quiz-container">
-            <div>
-                <h2>
-                    <p>${question.question}</p>
-                </h2>
-            </div>
-            <div>
-                <form class ="quiz-form">
-                    <p> What is your answer? </p>
-                    <input type="radio" name = "ans" value="">${question.answers[0]}</br>
-                    <input type="radio" name = "ans" value="">${question.answers[1]}</br>
-                    <input type="radio" name = "ans" value="">${question.answers[2]}</br>
-                    <input type="radio" name = "ans" value="">${question.answers[3]}</br>
-                    <button type="submit">Submit!</button>
-                </form>
-            </div>
+          <div>
+          <h2>
+          <p>${question.question}</p>
+          </h2>
+          </div>
+          <div>
+          <form class ="quiz-form">
+          <p> What is your answer? </p>
+          <input type="radio" name = "ans" value="">${question.answers[0]}</br>
+          <input type="radio" name = "ans" value="">${question.answers[1]}</br>
+          <input type="radio" name = "ans" value="">${question.answers[2]}</br>
+          <input type="radio" name = "ans" value="">${question.answers[3]}</br>
+          <button type="submit">Submit!</button>
+          </form>
+          </div>
           </div>`;
 }
 
@@ -115,15 +102,13 @@ function correctAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question correctly
   return `<div>
-            <div>
-                <h2>Hooray! That's the correct answer.</h2>
-                <p>Move along to the next question.</p>
-            </div>
-            <div>
-                <button class="next-question">
-                  <span>Next Question</span>
-                </button>
-            </div>
+          <div>
+          <h2>Hooray! That's the correct answer.</h2>
+          <p>Move along to the next question.</p>
+          </div>
+          <div>
+          <button>Next Question</button>
+          </div>
           </div>`;
 }
 
@@ -131,16 +116,14 @@ function wrongAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question incorrectly
   return `<div>
-            <div class="quiz-container">
-                <h2>NOPE!</h2>
-                <p>Looks like you don't know your history of the latter months of 2020.</p>
-                <p>The correct answer was: d. All of the above.</p>
-            </div>
-            <div>
-              <button class="next-question">
-                <span>Next Question</span>
-              </button>
-            </div>
+          <div class="quiz-container">
+          <h2>NOPE!</h2>
+          <p>Looks like you don't know your history of the latter months of 2020.</p>
+          <p>The correct answer was: d. All of the above.</p>
+          </div>
+          <div>
+          <button>Next Question</button>
+          </div>
           </div>`;
 }
 
@@ -150,63 +133,48 @@ function finalScorePageTemplate() {
   // if score > 3, happy monkey
   // else, angry monkey
   return `<div class="container">
-            <div class="img-container">
-              <img class="image" src="images/monkey-happy.jpg" alt="Grinning capuchin monkey on black background.">
-            </div>
-            <div class="quiz-container">
-                <h2>Great job! Here are your results.</h2>
-                <h3>${score} out of 5</h3>
-            </div>
-            <div>
-              <button class="retake-quiz">
-                <span>Retake Quiz</span>
-              </button>
-            </div>
+          <div class="img-container">
+          <img class="image" src="images/monkey-happy.jpg" alt="Grinning capuchin monkey on black background.">
+          </div>
+          <div class="quiz-container">
+          <h2>Great job! Here are your results.</h2>
+          <h3>Score: 3/5</h3>
+          </div>
+          <div>
+          <button>Retake Quiz</button>
+          </div>
           </div>`;
 }
 
-// function selectTemplate(page) {
-//   if (page==='home') {
-//     homePageTemplate();
-//   } else if (page==='question') {
-//     questionPageTemplate();
-//   } else if (page==='correct') {
-//     correctAnswerPageTemplate();
-//   } else if (page==='wrong') {
-//     wrongAnswerPageTemplate();
-//   } else {
-//     finalScorePageTemplate();
-//   }
-// }
-
-/********** RENDER FUNCTION(S) **********/
+//********** RENDER FUNCTION(S) **********
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
-
-function renderQuizPage(template) {
+function renderQuizPage() {
   // accepts the HTML template and inserts it into the DOM
-  console.log('`renderQuizPage` ran');
-  if (template===undefined) {
-    $('main').html(homePageTemplate())
-  } else {
-  $('main').html(template);
-  }
+  $("main").html(homePageTemplate);
+  alert("i work")
 }
+
+$(renderQuizPage)
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
 
-function handleStartClicked() {
+function handleStartQuiz() {
   // this function will listen for when the start button is clicked
-  $('.quiz-container').on('click', '.start-quiz' event => {
+  //and load the form page for the questions, starting with the first question
+  $('.quiz-container').on('click', '.start-quiz' (event => {
     console.log('`handleStartClicked` ran');
+    $(#"main").html(generateQuestionPageTemplate)
     // find the HTML template for the first question
     const questPage = questionPageTemplate();
     // and render it to the DOM
-    renderQuizPage(questPage);
+    // renderQuizPage(questPage);
   });
+    $(renderQuizPage);
+  }));
 }
 
 function handleAnswerSubmit() {
