@@ -81,10 +81,65 @@ const store = {
 
 // These functions return HTML templates
 
+function homePageTemplate() {
+  // // this function will return the HTML template for the home page
+}
+
+function generateQuestionPageTemplate() {
+  // this function will return the HTML template for the next question
+}
+
+function correctAnswerPageTemplate() {
+  // this function will return the HTML template for if the user answered  // the question correctly
+}
+
+function wrongAnswerPageTemplate() {
+  // this function will return the HTML template for if the user answered
+  // the question incorrectly
+}
+
+function finalScorePageTemplate() {
+  // this function will return the HTML template for the final score page
+  // it will return a different monkey image depending on the user's score
+  // if score > 3, happy monkey
+  // else, angry monkey
+}
+
 /********** RENDER FUNCTION(S) **********/
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
+function renderQuizPage() {
+  // find the HTML template and 
+  // insert it into the DOM
+}
+
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
+
+function handleStartClicked() {
+  // this function will listen for when the start button is clicked
+  // find the HTML template for the first question
+  // and render it to the DOM
+}
+
+function handleAnswerSubmit() {
+  // this function will listen for when the start button is clicked
+  // find if the user got the question right or wrong
+  // find the HTML template for the right or wrong answer page depending
+  // if the last question, find the template for the final score page
+  // render it to the DOM
+}
+
+function handleNextQuestionCLicked() {
+  // this function will listen for when the next question button is clicked
+  // find the template for the next question
+  // render it to the DOM
+}
+
+function handleRetakeQuizClicked() {
+  // this function will listen for when the retake quiz button is clicked
+  // find the template for the home page
+  // render it to the DOM
+}
