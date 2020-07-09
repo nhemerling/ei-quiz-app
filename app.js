@@ -162,6 +162,8 @@ function renderNextPage(template) {
   $('main').html(template);
 }
 
+/********** EVENT HANDLER FUNCTIONS **********/
+
 function handleStartQuiz() {
   $('.quiz-container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
