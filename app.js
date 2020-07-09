@@ -179,6 +179,7 @@ function handleAnswerSubmit() {
      // find the HTML template for the right or wrong answer page depending
     // if the last question, find the template for the final score page
     if (userAns === currentAns) {
+      answerKey.score += 1;
       $('main').html(correctAnswerPageTemplate);
     } else {
       $('main').html(wrongAnswerPageTemplate);
