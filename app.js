@@ -11,50 +11,50 @@ const store = {
       answers: [
         'Jello factory explosion',
         'Alien invasion',
-        'solar flares',
-        'tiny frogs jam up highway trucking systems'
+        'Solar flares',
+        'Tiny frogs jam up highway trucking systems'
       ],
-      correctAnswer: 'tiny frogs jam up highway trucking systems'
+      correctAnswer: 'Tiny frogs jam up highway trucking systems'
     },
     {
       question: 'What Disaster happened in September of 2020?',
       answers: [
-        'aliens steal the pyramids',
-        'killer bees take over france',
-        'world wide coffee shortages',
-        'nation wide paper shortage'
+        'Aliens steal the pyramids',
+        'Killer bees take over france',
+        'World wide coffee shortages',
+        'Nation wide paper shortage'
       ],
-      correctAnswer: 'world wide coffee shortages'
+      correctAnswer: 'World wide coffee shortages'
     },
     {
       question: 'What Disaster happened in October of 2020?',
       answers: [
-        'timmys mom runs out of coffee',
-        'timmys mom yells at timmy',
-        'timmy drops icecream on stonehenge',
-        'all of the above'
+        'Timmys mom runs out of coffee',
+        'Timmys mom yells at timmy',
+        'Timmy drops icecream on stonehenge',
+        'All of the above'
       ],
-      correctAnswer: 'all of the above'
+      correctAnswer: 'All of the above'
     },
     {
       question: 'What Disaster happened in November of 2020?',
       answers: [
-        'locusts eat all the cats',
-        'chickens stop laying eggs',
-        "timmy's icecream opens a wormhole in stonehenge",
-        'cows stop producing milk'
+        'Locusts eat all the cats',
+        'Chickens stop laying eggs',
+        'Timmys icecream opens a wormhole in stonehenge',
+        'Cows stop producing milk'
       ],
-      correctAnswer: "timmy's icecream opens a wormhole in stonehenge"
+      correctAnswer: 'Timmys icecream opens a wormhole in stonehenge'
     },
     {
       question: 'What Disaster happened in December of 2020?',
       answers: [
-        'ramen goes out of business',
+        'Ramen goes out of business',
         'Java finally installs',
         'Jets win the Superbowl early',
-        'capuchin monkeys traverse the wormhole and reveal the illuminati'
+        'Capuchin monkeys traverse the wormhole and reveal the illuminati'
       ],
-      correctAnswer: 'capuchin monkeys traverse the wormhole and reveal the illuminati'
+      correctAnswer: 'Capuchin monkeys traverse the wormhole and reveal the illuminati'
     }
   ],
   quizStarted: false,
