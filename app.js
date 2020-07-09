@@ -117,7 +117,7 @@ function wrongAnswerPageTemplate() {
           <div class="quiz-container">
           <h2>NOPE!</h2>
           <p>Looks like you don't know your history of the latter months of 2020.</p>
-          <p>The correct answer was: d. All of the above.</p>
+          <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
           </div>
           <div>
           <button class="next-question">Next Question</button>
@@ -214,14 +214,13 @@ function handleAnswerSubmit() {
     console.log(userAns);
      // find the HTML template for the right or wrong answer page depending
     // if the last question, find the template for the final score page
+    // render it to the DOM
     if (userAns === currentAns) {
       answerKey.score += 1;
       $('main').html(correctAnswerPageTemplate);
     } else {
       $('main').html(wrongAnswerPageTemplate);
     }
-    // render it to the DOM
-    $('main').html(correctAnswerPageTemplate);
   });
 }
 
