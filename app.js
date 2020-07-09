@@ -167,13 +167,6 @@ function renderNextPage(template) {
 function handleStartQuiz() {
   $('.quiz-container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
-<<<<<<< HEAD
-    $("main").html(questionPageTemplate)
-    
-  }));
-}
-
-=======
     $("main").html(questionPageTemplate);
   });
 }
@@ -185,4 +178,3 @@ function main() {
 }
 
 $(main());
->>>>>>> f2f97905da5b6b6c2e6fb056ec8e47413b77e284
