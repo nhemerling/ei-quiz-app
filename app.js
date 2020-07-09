@@ -82,20 +82,66 @@ const store = {
 // These functions return HTML templates
 
 function homePageTemplate() {
-  // // this function will return the HTML template for the home page
+  // this function will return the HTML template for the home page
+  return `<div class="container">
+            <div class="img-container">
+                <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
+            </div>
+            <div class="quiz-container">
+                <button>Start Quiz</button>
+            </div>
+          </div>`;
 }
 
 function generateQuestionPageTemplate() {
   // this function will return the HTML template for the next question
+  return `<div class="quiz-container">
+            <div>
+                <h2>
+                    <p>What Disaster happened in August of 2020?</p>
+                </h2>
+            </div>
+            <div>
+                <form class ="quiz-form">
+                    <p> What is your answer? </p>
+                    <input type="radio" name = "ans" value=""> Answer 1 </br>
+                    <input type="radio" name = "ans" value=""> Answer 2 </br>
+                    <input type="radio" name = "ans" value=""> Answer 3 </br>
+                    <input type="radio" name = "ans" value=""> Answer 4 </br>
+                    <button type="button">Submit!</button>
+                </form>
+            </div>
+          </div>`;
 }
 
 function correctAnswerPageTemplate() {
-  // this function will return the HTML template for if the user answered  // the question correctly
+  // this function will return the HTML template for if the user answered
+  // the question correctly
+  return `<div>
+            <div>
+                <h2>Hooray! That's the correct answer.</h2>
+                <p>Move along to the next question.</p>
+            </div>
+
+            <div>
+                <button>Next Question</button>
+            </div>
+          </div>`;
 }
 
 function wrongAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question incorrectly
+  return `<div>
+            <div class="quiz-container">
+                <h2>NOPE!</h2>
+                <p>Looks like you don't know your history of the latter months of 2020.</p>
+                <p>The correct answer was: d. All of the above.</p>
+            </div>
+            <div>
+                <button>Next Question</button>
+            </div>
+          </div>`;
 }
 
 function finalScorePageTemplate() {
@@ -103,6 +149,18 @@ function finalScorePageTemplate() {
   // it will return a different monkey image depending on the user's score
   // if score > 3, happy monkey
   // else, angry monkey
+  return `<div class="container">
+            <div class="img-container">
+              <img class="image" src="images/monkey-happy.jpg" alt="Grinning capuchin monkey on black background.">
+            </div>
+            <div class="quiz-container">
+                <h2>Great job! Here are your results.</h2>
+                <h3>Score: 3/5</h3>
+            </div>
+            <div>
+              <button>Retake Quiz</button>
+            </div>
+          </div>`;
 }
 
 /********** RENDER FUNCTION(S) **********/
