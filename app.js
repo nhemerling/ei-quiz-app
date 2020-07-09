@@ -149,20 +149,40 @@ function finalScorePageTemplate() {
 // This function conditionally replaces the contents of the <main> tag based on the state of the store//
 
 
-
 function renderQuizPage() {
+  // accepts the HTML template and inserts it into the DOM
   $("main").html(homePageTemplate);
+  console.log('`renderQuizPage` ran');
 }
 
-$(renderQuizPage)
 
 
-//start quiz button
+function renderNextPage(template) {
+  // accepts the HTML for the next page and inserts it into the DOM
+  $('main').html(template);
+}
+
+/********** EVENT HANDLER FUNCTIONS **********/
+
 function handleStartQuiz() {
   $('.quiz-container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
+<<<<<<< HEAD
     $("main").html(questionPageTemplate)
     
   }));
 }
 
+=======
+    $("main").html(questionPageTemplate);
+  });
+}
+
+function main() {
+  renderQuizPage();
+  renderNextPage();
+  handleStartQuiz();
+}
+
+$(main());
+>>>>>>> f2f97905da5b6b6c2e6fb056ec8e47413b77e284
