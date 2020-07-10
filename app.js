@@ -199,7 +199,6 @@ function handleAnswerSubmit() {
             console.log('NOOOOOOOOO!');
           } 
       });
-      
   }
 
 function handleNextQuestionCLicked() {
@@ -236,7 +235,6 @@ function finalImageSwap() {
     answerKey.finalImage = winImage;
   }
 }
-
 
 function main() {
   renderQuizPage();
