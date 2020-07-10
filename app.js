@@ -56,7 +56,8 @@ const answerKey = {
   ],
   quizStarted: false,
   questionNumber: 0,
-  score: 0
+  score: 0,
+  finalImage: '<img class="image" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>'
 };
 
 //TEMPLATES ARE COMPLETE
@@ -140,8 +141,8 @@ function finalScorePageTemplate() {
   // if score > 3, happy monkey
   // else, angry monkey
   return `<div class="container">
-          <div class="img-container">
-          <img class="image" src="images/monkey-happy.jpg" alt="Grinning capuchin monkey on black background.">
+          <div class="img-container final-image">
+          ${answerKey.finalImage}
           </div>
           <div class="quiz-container">
           <h2>Great job! Here are your results.</h2>
@@ -209,8 +210,9 @@ function handleNextQuestionCLicked() {
     if (answerKey.questionNumber < 5) {
       $("main").html(questionPageTemplate);
     } else {
-      console.log("working");
+      console.log("andleNextQuestionCLicked working");
       $("main").html(finalScorePageTemplate);
+      $(finalImageSwap);
     }
    
   });
@@ -226,12 +228,26 @@ function handleRetakeQuizClicked() {
   });
 }
 
+function finalImageSwap() {
+  const winImage = '<img class="image" src="images/monkey-happy.jpg" alt="Happy-little-monkey.jpg"></img>';
+  const loseImage = '<img class="image" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>';
+  if (answerKey.score === 5) {
+    console.log("i work!");
+    finalImage = winImage;
+  } else {
+    console.log("i work too!");
+    finalImage = loseImage;
+  }
+}
+
+
 function main() {
   renderQuizPage();
   handleStartQuiz();
   handleAnswerSubmit();
   handleNextQuestionCLicked();
   handleRetakeQuizClicked();
+  finalImageSwap();
 }
 
 $(main);
