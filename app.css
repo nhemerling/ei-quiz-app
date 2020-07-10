@@ -35,3 +35,25 @@ header, body {
   flex: 1;
 }
 
+.start-quiz {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px 30px;
+  margin: 30px 0;
+  border-radius: 15px;
+}
+
+/* For Desktop */
+
+@media all and (min-width: 600px) {
+
+  .image {
+    max-width: 500px;
+  }
+
+
+
+
+
+}
