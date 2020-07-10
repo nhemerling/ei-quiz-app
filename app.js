@@ -87,7 +87,7 @@ function questionPageTemplate() {
           <div>
           <form id="quiz-form">
           <p> What is your answer? </p>
-          <input type="radio" name = "ans" value="${question.answers[0]}">${question.answers[0]}</br>
+          <input type="radio" name = "ans" value="${question.answers[0]}" checked>${question.answers[0]}</br>
           <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
           <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
           <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
@@ -99,6 +99,8 @@ function questionPageTemplate() {
           </div>
           </div>`;
 }
+
+
 
 function correctAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
@@ -211,10 +213,9 @@ function handleNextQuestionCLicked() {
       $("main").html(questionPageTemplate);
     } else {
       console.log("andleNextQuestionCLicked working");
+      finalImageSwap();
       $("main").html(finalScorePageTemplate);
-      $(finalImageSwap);
     }
-   
   });
 }
 
@@ -230,13 +231,9 @@ function handleRetakeQuizClicked() {
 
 function finalImageSwap() {
   const winImage = '<img class="image" src="images/monkey-happy.jpg" alt="Happy-little-monkey.jpg"></img>';
-  const loseImage = '<img class="image" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>';
   if (answerKey.score === 5) {
     console.log("i work!");
-    finalImage = winImage;
-  } else {
-    console.log("i work too!");
-    finalImage = loseImage;
+    answerKey.finalImage = winImage;
   }
 }
 
