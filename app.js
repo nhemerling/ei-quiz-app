@@ -64,76 +64,82 @@ const answerKey = {
 function homePageTemplate() {
   // this function will return the HTML template for the home page
   return `<div class="container">
-          <div class="img-container">
-          <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
-          </div>
-          <div class="quiz-container">
-          <button class="start-quiz">
-          <span class="button-label">Start Quiz</span>
-          </button>
-          </div>
+            <div class="img-container">
+            <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
+            </div>
+            <div class="quiz-container">
+            <button class="start-quiz">
+            <span class="button-label">Start Quiz</span>
+            </button>
+            </div>
           </div>`;
 }
 
 function questionPageTemplate() {
   // this function will return the HTML template for the next question
   const question = answerKey.questions[answerKey.questionNumber];
-  return `<div class="quiz-container">
-          <div>
-          <h2>
-          <p>${question.question}</p>
-          </h2>
-          </div>
-          <div>
-          <form id="quiz-form">
-          <p> What is your answer? </p>
-          <input type="radio" name = "ans" value="${question.answers[0]}" checked>${question.answers[0]}</br>
-          <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
-          <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
-          <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
-          <button type="submit">Submit!</button>
-          </form>
-          </div>
-          <div>
-          <h2>Current Score: ${answerKey.score}/5<h2>
-          </div>
-          </div>`;
-}
+  return `<div class ="container">
+            <div class="quiz-container">
+              <div>
+              <h2>
+              <p>${question.question}</p>
+              </h2>
+              </div>
+              <div>
+              <form id="quiz-form">
+              <p> What is your answer? </p>
+              <input type="radio" name = "ans" value=" ${question.answers[0]}" checked> ${question.answers[0]}</br>
+              <input type="radio" name = "ans" value=" ${question.answers[1]}">  ${question.answers[1]}</br>
+              <input type="radio" name = "ans" value=" ${question.answers[2]}">  ${question.answers[2]}</br>
+              <input type="radio" name = "ans" value=" ${question.answers[3]}">  ${question.answers[3]}</br>
+              <button type="submit">Submit!</button>
+              </form>
+              </div>
+              <div>
+              <h2>Current Score: ${answerKey.score}/5<h2>
+              </div>
+            </div>
+          </div>`
+};
 
 
 
 function correctAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question correctly
-  return `<div>
-          <div>
-          <h2>Hooray! That's the correct answer.</h2>
-          <p>Move along to the next question.</p>
-          </div>
-          <div>
-          <button class="next-question">Next</button>
-          </div>
-          <div>
-          <h2>Current Score: ${answerKey.score}/5<h2>
-          </div>
+  return `<div class="container">
+              <div class="quiz-container">
+              <div>
+              <h2>Hooray! That's the correct answer.</h2>
+              <p>Move along to the next question.</p>
+              </div>
+              <div>
+              <button class="next-question">Next</button>
+              </div>
+              <div>
+              <h2>Current Score: ${answerKey.score}/5<h2>
+              </div>
+            </div>
           </div>`;
 }
 
 function wrongAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question incorrectly
-  return `<div>
-          <div class="quiz-container">
-          <h2>NOPE!</h2>
-          <p>Looks like you don't know your history of the latter months of 2020.</p>
-          <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
-          </div>
-          <div>
-          <button class="next-question">Next</button>
-          </div>
-          <div>
-          <h2>Current Score: ${answerKey.score}/5<h2>
-          </div>
+  return `<div class="container">
+            <div class="quiz-container">
+              <div>
+              <h2>NOPE!</h2>
+              <p>Looks like you don't know your history of the latter months of 2020.</p>
+              <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
+              </div>
+              <div>
+              <button class="next-question">Next</button>
+              </div>
+              <div>
+              <h2>Current Score: ${answerKey.score}/5<h2>
+              </div>
+            </div>
           </div>`;
 }
 
@@ -143,16 +149,16 @@ function finalScorePageTemplate() {
   // if score > 3, happy monkey
   // else, angry monkey
   return `<div class="container">
-          <div class="img-container final-image">
-          ${answerKey.finalImage}
-          </div>
-          <div class="quiz-container">
-          <h2>Great job! Here are your results.</h2>
-          <h3>Final Score: ${answerKey.score}/5</h3>
-          </div>
-          <div>
-          <button class="retake-quiz">Retake Quiz</button>
-          </div>
+            <div class="img-container final-image">
+            ${answerKey.finalImage}
+            </div>
+            <div class="quiz-container">
+            <h2>Great job! Here are your results.</h2>
+            <h3>Final Score: ${answerKey.score}/5</h3>
+            </div>
+            <div>
+            <button class="retake-quiz">Retake Quiz</button>
+            </div>
           </div>`;
 }
 
