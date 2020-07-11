@@ -143,9 +143,9 @@ function wrongAnswerPageTemplate() {
               <button class="next-question">Next</button>
               </div>
             </div>
-            <div>
+            <div class="score">
               <h3>Current Score: ${answerKey.score}/5<h3>
-              </div>
+            </div>
           </div>`;
 }
 
