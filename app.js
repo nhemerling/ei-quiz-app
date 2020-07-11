@@ -9,26 +9,26 @@ const answerKey = {
         'Jello factory explosion.',
         'Alien invasion.',
         'Solar flares.',
-        'Tiny frogs jam up highway trucking systems.'
+        'Tiny frogs jammed up highway trucking systems.'
       ],
-      correctAnswer: 'Tiny frogs jam up highway trucking systems.'
+      correctAnswer: 'Tiny frogs jammed up highway trucking systems.'
     },
     {
       question: 'What Disaster happened in September of 2020?',
       answers: [
         'Aliens steal the pyramids.',
-        'Killer bees take over france.',
-        'World-wide coffee shortages.',
-        'Nation wide paper shortage.'
+        'Killer bees take over France.',
+        'Worldwide coffee shortages.',
+        'Nationwide paper shortage.'
       ],
-      correctAnswer: 'World-wide coffee shortages.'
+      correctAnswer: 'Worldwide coffee shortages.'
     },
     {
       question: 'What Disaster happened in October of 2020?',
       answers: [
-        'Timmys mom runs out of coffee.',
-        'Timmys mom yells at timmy.',
-        'Timmy drops icecream on stonehenge.',
+        'Timmy\'s mom ran out of coffee.',
+        'Timmy\'s mom yelled at Timmy.',
+        'Timmy dropped icecream on stonehenge.',
         'All of the above.'
       ],
       correctAnswer: 'All of the above.'
@@ -36,22 +36,22 @@ const answerKey = {
     {
       question: 'What Disaster happened in November of 2020?',
       answers: [
-        'Locusts eat all the cats.',
-        'Chickens stop laying eggs.',
-        'Timmys icecream opens a wormhole in stonehenge.',
-        'Cows stop producing milk.'
+        'Locusts ate all the cats.',
+        'Chickens stopped laying eggs.',
+        'Timmy\'s icecream opened a wormhole in Stonehenge.',
+        'Cows stopped producing milk.'
       ],
-      correctAnswer: 'Timmys icecream opens a wormhole in stonehenge.'
+      correctAnswer: 'Timmy\'s icecream opened a wormhole in Stonehenge.'
     },
     {
       question: 'What Disaster happened in December of 2020?',
       answers: [
-        'Ramen goes out of business.',
-        'Java finally installs.',
-        'Jets win the Superbowl early.',
-        'Capuchin monkeys traverse the wormhole and reveal the illuminati.'
+        'Ramen went out of business.',
+        'Java finally installed.',
+        'Jets won the Superbowl early.',
+        'Capuchin monkeys traversed the wormhole and revealed The Illuminati.'
       ],
-      correctAnswer: 'Capuchin monkeys traverse the wormhole and reveal the illuminati.'
+      correctAnswer: 'Capuchin monkeys traversed the wormhole and revealed The Illuminati.'
     }
   ],
   quizStarted: false,
@@ -94,7 +94,7 @@ function questionPageTemplate() {
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5</h3>
+              <h3>Current Score: ${answerKey.score} / 5</h3>
             </div>
           </div>`
 };
@@ -106,7 +106,7 @@ function correctAnswerPageTemplate() {
   // the question correctly
   return `<div class="container">
             <div class="quiz-container">
-              <div>
+              <div class="main-content">
                 <h2>You really know your stuff, eh?</h2>
                 <p>Move along to the next question.</p>
               </div>
@@ -115,7 +115,7 @@ function correctAnswerPageTemplate() {
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5<h3>
+              <h3>Current Score: ${answerKey.score} / 5<h3>
             </div>
           </div>`;
 }
@@ -125,16 +125,16 @@ function wrongAnswerPageTemplate() {
   // the question incorrectly
   return `<div class="container">
             <div class="quiz-container">
-              <div>
+              <div class="main-content">
                 <h2>That's not what happened in the latter half of the year 2020!</h2>
-                <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
+                <p>The answer: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
               </div>
               <div>
                 <button class="next-question">Next</button>
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5<h3>
+              <h3>Current Score: ${answerKey.score} / 5<h3>
             </div>
           </div>`;
 }
@@ -145,7 +145,7 @@ function finalScorePageTemplate() {
               ${answerKey.finalImage}
             </div>
             <div class="results">
-              <h2>Final Score: ${answerKey.score}/5</h2>
+              <h2>Final Score: ${answerKey.score} / 5</h2>
               <h3>We had fun in 2020, didn't we?</h3>
             </div>
             <div>

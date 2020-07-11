@@ -6,27 +6,34 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+
 html, body {
   margin:0px;
   padding:0px;
 }
+
 body {
-  border: 1px solid teal ;
+  border: 1px solid #66ff66 ;
+  border-radius: 10px;
   margin: 20px;
   padding: 20px;
 }
+
 header {
   text-align: center;
   margin:10px;
 }
+
 .image {
   max-width: 80%;
-
+  border-radius: 10px;
 }
+
 .image2 {
   max-width: 60%;
-
+  border-radius: 10px;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -37,13 +44,16 @@ header {
 .img-container {
   flex: 1;
   text-align: center;
-  
 }
 
 .quiz-container {
   flex: 1;
   text-align: center;
   min-height:400px;
+}
+
+.main-content {
+  margin-top: 50px;
 }
 
 button {
@@ -55,7 +65,9 @@ button {
   display: inline-block;
   padding: 7px 10px;
   margin: 15px 0;
-  border-radius: 15px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .submit-button {
@@ -71,16 +83,26 @@ button {
   text-align: left;
   
 }
+
 form {
   text-align: left;
-  font-size: 25px;
+  font-size: 21px;
   padding: 5px;
   display: inline-block;
   max-width: 300px;
 }
+
 input[type="radio"]{
   margin: 5px 10px 5px 10px;
   transform: scale(1.5);
+}
+
+h1 {
+  font-size: 33px;
+}
+
+h2, h3, p {
+  font-family: Times;
 }
 
 h2 {
@@ -89,8 +111,9 @@ h2 {
 
 p {
   font-size: 20px;
-  padding: 0 px 15px 0px 15px;
+  padding: 0px 15px 0px 15px;
 }
+
 .img-container .final-image , .results{
   text-align: center;
 }
@@ -99,23 +122,39 @@ p {
 @media all and (min-width: 600px) {
 
   .image {
-    max-width: 500px;
+    max-width: 470px;
   }
 
   .image2 {
-    max-width: 380px;
+    max-width: 350px;
   }
   
   p {
     font-size: 25px;
   }
+
   form {
     font-size: 30px;
     max-width: 400px;
   }
 
- 
+  input[type="radio"] {
+    cursor: pointer;
+  }
 
+  button {
+    padding: 13px 20px;
+  }
 
+  button:hover {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    background-color: #66ff66;
+    transition: 0.4s;
+    cursor: pointer;
+  }
 
+  h1 {
+    font-size: 36px;
+  }
 }
