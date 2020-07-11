@@ -6,52 +6,52 @@ const answerKey = {
     {
       question: 'What Disaster happened in August of 2020?',
       answers: [
-        'Jello factory explosion',
-        'Alien invasion',
-        'Solar flares',
-        'Tiny frogs jam up highway trucking systems'
+        'Jello factory explosion.',
+        'Alien invasion.',
+        'Solar flares.',
+        'Tiny frogs jam up highway trucking systems.'
       ],
-      correctAnswer: 'Tiny frogs jam up highway trucking systems'
+      correctAnswer: 'Tiny frogs jam up highway trucking systems.'
     },
     {
       question: 'What Disaster happened in September of 2020?',
       answers: [
-        'Aliens steal the pyramids',
-        'Killer bees take over france',
-        'World wide coffee shortages',
-        'Nation wide paper shortage'
+        'Aliens steal the pyramids.',
+        'Killer bees take over france.',
+        'World-wide coffee shortages.',
+        'Nation wide paper shortage.'
       ],
-      correctAnswer: 'World wide coffee shortages'
+      correctAnswer: 'World-wide coffee shortages.'
     },
     {
       question: 'What Disaster happened in October of 2020?',
       answers: [
-        'Timmys mom runs out of coffee',
-        'Timmys mom yells at timmy',
-        'Timmy drops icecream on stonehenge',
-        'All of the above'
+        'Timmys mom runs out of coffee.',
+        'Timmys mom yells at timmy.',
+        'Timmy drops icecream on stonehenge.',
+        'All of the above.'
       ],
-      correctAnswer: 'All of the above'
+      correctAnswer: 'All of the above.'
     },
     {
       question: 'What Disaster happened in November of 2020?',
       answers: [
-        'Locusts eat all the cats',
-        'Chickens stop laying eggs',
-        'Timmys icecream opens a wormhole in stonehenge',
-        'Cows stop producing milk'
+        'Locusts eat all the cats.',
+        'Chickens stop laying eggs.',
+        'Timmys icecream opens a wormhole in stonehenge.',
+        'Cows stop producing milk.'
       ],
-      correctAnswer: 'Timmys icecream opens a wormhole in stonehenge'
+      correctAnswer: 'Timmys icecream opens a wormhole in stonehenge.'
     },
     {
       question: 'What Disaster happened in December of 2020?',
       answers: [
-        'Ramen goes out of business',
-        'Java finally installs',
-        'Jets win the Superbowl early',
-        'Capuchin monkeys traverse the wormhole and reveal the illuminati'
+        'Ramen goes out of business.',
+        'Java finally installs.',
+        'Jets win the Superbowl early.',
+        'Capuchin monkeys traverse the wormhole and reveal the illuminati.'
       ],
-      correctAnswer: 'Capuchin monkeys traverse the wormhole and reveal the illuminati'
+      correctAnswer: 'Capuchin monkeys traverse the wormhole and reveal the illuminati.'
     }
   ],
   quizStarted: false,
@@ -65,10 +65,10 @@ function homePageTemplate() {
   // this function will return the HTML template for the home page
   return `<div class="container">
             <div class="img-container">
-            <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
+              <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
             </div>
             <div>
-            <button class="start-quiz">Start Quiz</button>
+              <button class="start-quiz">Start Quiz</button>
             </div>
           </div>`;
 }
@@ -79,22 +79,22 @@ function questionPageTemplate() {
   return `<div class ="container">
             <div class="quiz-container">
               <div>
-              <h2>
-              <p>${question.question}</p>
-              </h2>
+                <h2>${question.question}</h2>
               </div>
               <div>
-              <form id="quiz-form">
-              <input type="radio" name = "ans" value="${question.answers[0]}" checked>${question.answers[0]}</br>
-              <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
-              <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
-              <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
-              <div class="submit-button"><button type="submit">Submit!</button></div>
-              </form>
+                <form id="quiz-form">
+                  <input type="radio" name = "ans" value="${question.answers[0]}" checked>${question.answers[0]}</br>
+                  <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
+                  <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
+                  <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
+                  <div class="submit-button">
+                    <button type="submit">Submit!</button>
+                  </div>
+                </form>
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5<h3>
+              <h3>Current Score: ${answerKey.score}/5</h3>
             </div>
           </div>`
 };
@@ -105,18 +105,18 @@ function correctAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question correctly
   return `<div class="container">
-              <div class="quiz-container">
+            <div class="quiz-container">
               <div>
-              <h2>Hooray! That's the correct answer.</h2>
-              <p>Move along to the next question.</p>
+                <h2>You really know your stuff, eh?</h2>
+                <p>Move along to the next question.</p>
               </div>
               <div>
-              <button class="next-question">Next</button>
+                <button class="next-question">Next</button>
               </div>
             </div>
             <div class="score">
               <h3>Current Score: ${answerKey.score}/5<h3>
-              </div>
+            </div>
           </div>`;
 }
 
@@ -126,31 +126,30 @@ function wrongAnswerPageTemplate() {
   return `<div class="container">
             <div class="quiz-container">
               <div>
-              <h2>NOPE!</h2>
-              <p>Looks like you don't know your history of the latter months of 2020.</p>
-              <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
+                <h2>That's not what happened in the latter half of the year 2020!</h2>
+                <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
               </div>
               <div>
-              <button class="next-question">Next</button>
+                <button class="next-question">Next</button>
               </div>
             </div>
             <div class="score">
               <h3>Current Score: ${answerKey.score}/5<h3>
-              </div>
+            </div>
           </div>`;
 }
 
 function finalScorePageTemplate() {
-  return `<div class="container">
+  return `<div class="container final-container">
             <div class="img-container final-image">
-            ${answerKey.finalImage}
+              ${answerKey.finalImage}
             </div>
             <div class="results">
-            <h2>Great job! Here are your results.</h2>
-            <h3>Final Score: ${answerKey.score}/5</h3>
+              <h2>Final Score: ${answerKey.score}/5</h2>
+              <h3>We had fun in 2020, didn't we?</h3>
             </div>
             <div>
-            <button class="retake-quiz">Retake Quiz</button>
+              <button class="retake-quiz">Retake Quiz</button>
             </div>
           </div>`;
 }
@@ -182,24 +181,21 @@ function handleAnswerSubmit() {
   $('main').on("submit", function(event) {
     event.preventDefault();
     console.log('`handleAnswerSubmit` ran');
-    // find if the user got the question right or wrong
-          
-      const answer = answerKey.questions[answerKey.questionNumber].correctAnswer;
-      const selectedAnswer = $('input[name="ans"]:checked').val();
-      
-      console.log(answer);
-      console.log(selectedAnswer);
-      
-      if (selectedAnswer === answer){
-              answerKey.score ++;
-              $('main').html(correctAnswerPageTemplate);
-              console.log("correct answer")
-          }else{
-            $('main').html(wrongAnswerPageTemplate);  
-            console.log('wrong answer');
-          } 
-      });
-  }
+    // find if the user got the question right or wrong    
+    const answer = answerKey.questions[answerKey.questionNumber].correctAnswer;
+    const selectedAnswer = $('input[name="ans"]:checked').val(); 
+    console.log(answer);
+    console.log(selectedAnswer);
+    if (selectedAnswer === answer){
+      answerKey.score ++;
+      $('main').html(correctAnswerPageTemplate);
+      console.log("correct answer")
+    }else{
+      $('main').html(wrongAnswerPageTemplate);  
+      console.log('wrong answer');
+    } 
+  });
+}
 
 function handleNextQuestionCLicked() {
   // this function will listen for when the next question button is clicked

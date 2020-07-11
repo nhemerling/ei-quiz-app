@@ -79,7 +79,13 @@ form {
 }
 input[type="radio"]{
   margin: 5px 10px 5px 10px;
+  transform: scale(1.5);
 }
+
+h2 {
+  font-size: 30px;
+}
+
 p {
   font-size: 20px;
   padding: 0 px 15px 0px 15px;
@@ -94,6 +100,10 @@ p {
   .image {
     max-width: 500px;
   }
+
+  .image2 {
+    max-width: 380px;
+  }
   
   p {
     font-size: 25px;
@@ -102,6 +112,8 @@ p {
     font-size: 30px;
     max-width: 400px;
   }
+
+ 
 
 
 
