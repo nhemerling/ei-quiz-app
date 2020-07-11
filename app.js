@@ -85,20 +85,11 @@ function questionPageTemplate() {
               </div>
               <div>
               <form id="quiz-form">
-<<<<<<< HEAD
-              <p> What is your answer? </p>
-              <input type="radio" name = "ans" value="${question.answers[0]}" checked> ${question.answers[0]}</br>
-              <input type="radio" name = "ans" value="${question.answers[1]}">  ${question.answers[1]}</br>
-              <input type="radio" name = "ans" value="${question.answers[2]}">  ${question.answers[2]}</br>
-              <input type="radio" name = "ans" value="${question.answers[3]}">  ${question.answers[3]}</br>
-              <button type="submit">Submit!</button>
-=======
               <input type="radio" name = "ans" value="${question.answers[0]}" checked>${question.answers[0]}</br>
               <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
               <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
               <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
-              <div><button type="submit">Submit!</button></div>
->>>>>>> 498a711748f7bcc46328ad331fbed84658dec8b4
+              <div class="submit-button"><button type="submit">Submit!</button></div>
               </form>
               </div>
             </div>
@@ -145,7 +136,7 @@ function wrongAnswerPageTemplate() {
             </div>
             <div class="score">
               <h3>Current Score: ${answerKey.score}/5<h3>
-            </div>
+              </div>
           </div>`;
 }
 
@@ -244,7 +235,7 @@ function finalImageSwap() {
     answerKey.finalImage = winImage;
   }
 }
-
+ 
 function main() {
   renderQuizPage();
   handleStartQuiz();
