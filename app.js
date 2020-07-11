@@ -186,42 +186,44 @@ function handleAnswerSubmit() {
     const selectedAnswer = $('input[name="ans"]:checked').val(); 
     console.log(answer);
     console.log(selectedAnswer);
+    let outputFunction = correctAnswerPageTemplate
     if (selectedAnswer === answer){
       answerKey.score ++;
-      $('main').html(correctAnswerPageTemplate);
       console.log("correct answer")
     }else{
-      $('main').html(wrongAnswerPageTemplate);  
+      outputFunction = wrongAnswerPageTemplate
       console.log('wrong answer');
     } 
+    $('main').html(outputFunction());
   });
 }
 
-function handleNextQuestionCLicked() {
+function beforeNextQuestionCLicked() {
   // this function will listen for when the next question button is clicked
+  console.log('`beforeNextQuestionClicked` ran');
   $('main').on('click', '.next-question', event => {
-    console.log('`handNextQuestionClicked` ran');
     // update question template with next question
     answerKey.questionNumber ++;
     // render it to the DOM
     if (answerKey.questionNumber < 5) {
       $("main").html(questionPageTemplate);
     } else {
-      console.log("andleNextQuestionCLicked working");
       finalImageSwap();
       $("main").html(finalScorePageTemplate);
     }
+    console.log("afterNextQuestionCLicked working");
   });
 }
 
-function handleRetakeQuizClicked() {
+function beforeRetakeQuizClicked() {
   // this function will listen for when the retake quiz button is clicked
   $('main').on('click', '.retake-quiz', event => {
-    console.log('`handleRetakeQuizClicked` ran');
     location.reload(true);
     // render it to the DOM
-    $(renderQuizPage);
+    console.log('`retakeQuizClicked` ran');
+    renderQuizPage();
   });
+  console.log('`beforeRetakeQuizClicked` ran');
 }
 
 function finalImageSwap() {
@@ -232,13 +234,13 @@ function finalImageSwap() {
   }
 }
  
-function main() {
+function onDocumentReady() {
   renderQuizPage();
   handleStartQuiz();
   handleAnswerSubmit();
-  handleNextQuestionCLicked();
-  handleRetakeQuizClicked();
+  beforeNextQuestionCLicked();
+  beforeRetakeQuizClicked();
   finalImageSwap();
-}
+};
 
-$(main);
+$(onDocumentReady);

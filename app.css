@@ -10,7 +10,11 @@ html, body {
   margin:0px;
   padding:0px;
 }
-
+body {
+  border: 1px solid teal ;
+  margin: 20px;
+  padding: 20px;
+}
 header {
   text-align: center;
   margin:10px;
@@ -28,7 +32,6 @@ header {
   justify-content: space-between;
   text-align: center;
   flex-direction: column;
-  background-color: darkmagenta;
 }
 
 .img-container {
@@ -39,7 +42,6 @@ header {
 
 .quiz-container {
   flex: 1;
-  background-color: aquamarine;
   text-align: center;
   min-height:400px;
 }
@@ -70,7 +72,6 @@ button {
   
 }
 form {
-  background-color: blueviolet;
   text-align: left;
   font-size: 25px;
   padding: 5px;
