@@ -26,6 +26,7 @@ header {
 .container {
   display: flex;
   justify-content: space-between;
+  text-align: center;
   flex-direction: column;
   background-color: darkmagenta;
 }
@@ -40,7 +41,7 @@ header {
   flex: 1;
   background-color: aquamarine;
   text-align: center;
-  min-height:350px;
+  min-height:400px;
 }
 
 button {
