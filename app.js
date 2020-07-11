@@ -57,7 +57,7 @@ const answerKey = {
   quizStarted: false,
   questionNumber: 0,
   score: 0,
-  finalImage: '<img class="image" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>'
+  finalImage: '<img class="image2" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>'
 };
 
 //TEMPLATES ARE COMPLETE
@@ -67,10 +67,8 @@ function homePageTemplate() {
             <div class="img-container">
             <img class="image" src="images/monkey-title-image.jpg" alt="Capuchin Monkey sticking its tongue out">
             </div>
-            <div class="quiz-container">
-            <button class="start-quiz">
-            <span class="button-label">Start Quiz</span>
-            </button>
+            <div>
+            <button class="start-quiz">Start Quiz</button>
             </div>
           </div>`;
 }
@@ -87,17 +85,25 @@ function questionPageTemplate() {
               </div>
               <div>
               <form id="quiz-form">
+<<<<<<< HEAD
               <p> What is your answer? </p>
               <input type="radio" name = "ans" value="${question.answers[0]}" checked> ${question.answers[0]}</br>
               <input type="radio" name = "ans" value="${question.answers[1]}">  ${question.answers[1]}</br>
               <input type="radio" name = "ans" value="${question.answers[2]}">  ${question.answers[2]}</br>
               <input type="radio" name = "ans" value="${question.answers[3]}">  ${question.answers[3]}</br>
               <button type="submit">Submit!</button>
+=======
+              <input type="radio" name = "ans" value="${question.answers[0]}" checked>${question.answers[0]}</br>
+              <input type="radio" name = "ans" value="${question.answers[1]}">${question.answers[1]}</br>
+              <input type="radio" name = "ans" value="${question.answers[2]}">${question.answers[2]}</br>
+              <input type="radio" name = "ans" value="${question.answers[3]}">${question.answers[3]}</br>
+              <div><button type="submit">Submit!</button></div>
+>>>>>>> 498a711748f7bcc46328ad331fbed84658dec8b4
               </form>
               </div>
-              <div>
-              <h2>Current Score: ${answerKey.score}/5<h2>
-              </div>
+            </div>
+            <div class="score">
+              <h3>Current Score: ${answerKey.score}/5<h3>
             </div>
           </div>`
 };
@@ -116,10 +122,10 @@ function correctAnswerPageTemplate() {
               <div>
               <button class="next-question">Next</button>
               </div>
-              <div>
-              <h2>Current Score: ${answerKey.score}/5<h2>
-              </div>
             </div>
+            <div class="score">
+              <h3>Current Score: ${answerKey.score}/5<h3>
+              </div>
           </div>`;
 }
 
@@ -136,23 +142,19 @@ function wrongAnswerPageTemplate() {
               <div>
               <button class="next-question">Next</button>
               </div>
-              <div>
-              <h2>Current Score: ${answerKey.score}/5<h2>
-              </div>
             </div>
+            <div>
+              <h3>Current Score: ${answerKey.score}/5<h3>
+              </div>
           </div>`;
 }
 
 function finalScorePageTemplate() {
-  // this function will return the HTML template for the final score page
-  // it will return a different monkey image depending on the user's score
-  // if score > 3, happy monkey
-  // else, angry monkey
   return `<div class="container">
             <div class="img-container final-image">
             ${answerKey.finalImage}
             </div>
-            <div class="quiz-container">
+            <div class="results">
             <h2>Great job! Here are your results.</h2>
             <h3>Final Score: ${answerKey.score}/5</h3>
             </div>
@@ -176,7 +178,7 @@ function renderQuizPage() {
 /********** EVENT HANDLER FUNCTIONS **********/
 
 function handleStartQuiz() {
-  $('.quiz-container').on('click', '.start-quiz', event => {
+  $('.container').on('click', '.start-quiz', event => {
     console.log('`handleStartClicked` ran');
     answerKey.quizStarted = true;
     console.log(answerKey.quizStarted);
@@ -200,9 +202,10 @@ function handleAnswerSubmit() {
       if (selectedAnswer === answer){
               answerKey.score ++;
               $('main').html(correctAnswerPageTemplate);
+              console.log("correct answer")
           }else{
             $('main').html(wrongAnswerPageTemplate);  
-            console.log('NOOOOOOOOO!');
+            console.log('wrong answer');
           } 
       });
   }
@@ -235,7 +238,7 @@ function handleRetakeQuizClicked() {
 }
 
 function finalImageSwap() {
-  const winImage = '<img class="image" src="images/monkey-happy.jpg" alt="Happy-little-monkey.jpg"></img>';
+  const winImage = '<img class="image2" src="images/monkey-happy.jpg" alt="Happy-little-monkey.jpg"></img>';
   if (answerKey.score === 5) {
     console.log("i work!");
     answerKey.finalImage = winImage;
