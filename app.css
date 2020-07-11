@@ -47,7 +47,9 @@ header, body {
   margin: 15px 0;
   border-radius: 15px;
 }
-
+.score {
+  position: bottom;
+}
 form {
   text-align: left;
   background-color: blueviolet;

@@ -95,7 +95,7 @@ function questionPageTemplate() {
               <button type="submit">Submit!</button>
               </form>
               </div>
-              <div>
+              <div class="score">
               <h2>Current Score: ${answerKey.score}/5<h2>
               </div>
             </div>
@@ -116,7 +116,7 @@ function correctAnswerPageTemplate() {
               <div>
               <button class="next-question">Next</button>
               </div>
-              <div>
+              <div class="score">
               <h2>Current Score: ${answerKey.score}/5<h2>
               </div>
             </div>
@@ -144,10 +144,6 @@ function wrongAnswerPageTemplate() {
 }
 
 function finalScorePageTemplate() {
-  // this function will return the HTML template for the final score page
-  // it will return a different monkey image depending on the user's score
-  // if score > 3, happy monkey
-  // else, angry monkey
   return `<div class="container">
             <div class="img-container final-image">
             ${answerKey.finalImage}
@@ -200,6 +196,7 @@ function handleAnswerSubmit() {
       if (selectedAnswer === answer){
               answerKey.score ++;
               $('main').html(correctAnswerPageTemplate);
+              console.log("why you no work")
           }else{
             $('main').html(wrongAnswerPageTemplate);  
             console.log('NOOOOOOOOO!');
