@@ -88,10 +88,10 @@ function questionPageTemplate() {
               <div>
               <form id="quiz-form">
               <p> What is your answer? </p>
-              <input type="radio" name = "ans" value=" ${question.answers[0]}" checked> ${question.answers[0]}</br>
-              <input type="radio" name = "ans" value=" ${question.answers[1]}">  ${question.answers[1]}</br>
-              <input type="radio" name = "ans" value=" ${question.answers[2]}">  ${question.answers[2]}</br>
-              <input type="radio" name = "ans" value=" ${question.answers[3]}">  ${question.answers[3]}</br>
+              <input type="radio" name = "ans" value="${question.answers[0]}" checked> ${question.answers[0]}</br>
+              <input type="radio" name = "ans" value="${question.answers[1]}">  ${question.answers[1]}</br>
+              <input type="radio" name = "ans" value="${question.answers[2]}">  ${question.answers[2]}</br>
+              <input type="radio" name = "ans" value="${question.answers[3]}">  ${question.answers[3]}</br>
               <button type="submit">Submit!</button>
               </form>
               </div>
