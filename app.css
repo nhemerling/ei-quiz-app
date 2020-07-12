@@ -88,10 +88,12 @@ form {
   display: inline-block;
   max-width: 300px;
 }
-
+.flex-label {
+  display: flex;
+}
 input[type="radio"]{
-  margin: 5px 5px 5px 5px;
   transform: scale(1.5);
+  margin-right: 12px;
 }
 
 h1 {
@@ -111,12 +113,15 @@ p {
 .question-number {
   font-size: 15px;
 }
+
+
 /* For Desktop */
 
 @media all and (min-width: 600px) {
   body {
-    border: 1px solid #66ff66;
+    border: 3px solid #66ff66;
   }
+ 
   .image {
     max-width: 470px;
   }
@@ -130,8 +135,8 @@ p {
   }
 
   form {
-    font-size: 27px;
-    max-width: 400px;
+    font-size: 20px;
+    max-width: 500px;
   }
   h2 {
     font-size: 30px;
@@ -156,11 +161,11 @@ p {
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 35px;
   }
 
   body {
-    max-width: 700px;
+    max-width: 800px;
     margin: auto;
     margin-top: 20px;
   }
