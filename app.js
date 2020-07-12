@@ -38,7 +38,7 @@ const answerKey = {
       answers: [
         'Locusts ate all the cats.',
         'Chickens stopped laying eggs.',
-        'Timmy\'s icecream opens a wormhole in stonehenge.',
+        'Timmy\'s icecream opened a wormhole in stonehenge.',
         'Cows stopped producing milk.'
       ],
       correctAnswer: 'Timmy\'s icecream opened a wormhole in stonehenge.'
@@ -99,8 +99,6 @@ function questionPageTemplate() {
           </div>`
 };
 
-
-
 function correctAnswerPageTemplate() {
   // this function will return the HTML template for if the user answered
   // the question correctly
@@ -159,28 +157,28 @@ function finalScorePageTemplate() {
 // This function conditionally replaces the contents of the <main> tag based on the state of the store//
 
 
-function renderQuizPage() {
+function loadQuizPage() {
   // accepts the HTML template and inserts it into the DOM
   $("main").html(homePageTemplate);
-  console.log('`renderQuizPage` ran');
+  console.log('`loadQuizPage` ran');
 }
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
-function handleStartQuiz() {
+function beforeStartQuiz() {
+  console.log('`beforeStartClicked` ran');
   $('.container').on('click', '.start-quiz', event => {
-    console.log('`handleStartClicked` ran');
     answerKey.quizStarted = true;
     console.log(answerKey.quizStarted);
     $("main").html(questionPageTemplate);
   });
 }
 
-function handleAnswerSubmit() {
+function beforeAnswerSubmit() {
   // this function will listen for when the start button is clicked
+  console.log('`beforeAnswerSubmit` ran');
   $('main').on("submit", function(event) {
     event.preventDefault();
-    console.log('`handleAnswerSubmit` ran');
     // find if the user got the question right or wrong    
     const answer = answerKey.questions[answerKey.questionNumber].correctAnswer;
     const selectedAnswer = $('input[name="ans"]:checked').val(); 
@@ -235,9 +233,9 @@ function finalImageSwap() {
 }
  
 function onDocumentReady() {
-  renderQuizPage();
-  handleStartQuiz();
-  handleAnswerSubmit();
+  loadQuizPage();
+  beforeStartQuiz();
+  beforeAnswerSubmit();
   beforeNextQuestionCLicked();
   beforeRetakeQuizClicked();
   finalImageSwap();
