@@ -107,10 +107,10 @@ function correctAnswerPageTemplate() {
             <div class="quiz-container">
               <div>
                 <h2>You really know your stuff, eh?</h2>
-                <p>Move along to the next question.</p>
+                <p>Impressive. Moving right along...</p>
               </div>
               <div>
-                <button class="next-question">Next</button>
+                <button class="next-question">Next!</button>
               </div>
             </div>
             <div class="score">
@@ -129,7 +129,7 @@ function wrongAnswerPageTemplate() {
                 <p>The correct answer was: ${answerKey.questions[answerKey.questionNumber].correctAnswer}</p>
               </div>
               <div>
-                <button class="next-question">Next</button>
+                <button class="next-question">Next!</button>
               </div>
             </div>
             <div class="score">

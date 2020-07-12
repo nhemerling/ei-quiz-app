@@ -33,13 +33,11 @@ header {
 .image {
   max-width: 80%;
   margin: 10px;
-  border-radius: 10px;
 }
 
 .image2 {
   max-width: 60%;
   margin: 10px;
-  border-radius: 10px;
 }
 
 .container {
@@ -72,7 +70,6 @@ button {
   padding: 7px 10px;
   margin: 15px 0;
   border: 2px solid #000000;
-  border-radius: 10px;
   background-color: #ffffff;
 }
 
