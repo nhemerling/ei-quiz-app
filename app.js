@@ -114,7 +114,7 @@ function correctAnswerPageTemplate() {
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5<h3>
+              <h3>Current Score: ${answerKey.score}/${answerKey.questions.length}</h3>
             </div>
           </div>`;
 }
@@ -133,7 +133,7 @@ function wrongAnswerPageTemplate() {
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5<h3>
+              <h3>Current Score: ${answerKey.score}/${answerKey.questions.length}</h3>
             </div>
           </div>`;
 }
