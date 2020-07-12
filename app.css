@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  border: 1px solid #66ff66 ;
+  border: 1px solid #56dd56 ;
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
@@ -133,7 +133,7 @@ p {
   }
 
   form {
-    font-size: 30px;
+    font-size: 27px;
     max-width: 400px;
   }
 
