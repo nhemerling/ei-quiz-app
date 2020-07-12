@@ -98,18 +98,18 @@ h1 {
   font-size: 25px;
   color: #3a3a3a;
 }
-
 h2 {
   font-size: 20px;
 }
-
 p {
   font-size: 20px;
   padding: 0px 10px 0px 10px;
 }
-
 .img-container .final-image , .results{
   text-align: center;
+}
+.question-number {
+  font-size: 15px;
 }
 /* For Desktop */
 
@@ -134,7 +134,9 @@ p {
   h2 {
     font-size: 30px;
   }
-  
+  .question-number {
+    font-size: 25px;
+  }
   input[type="radio"] {
     cursor: pointer;
   }

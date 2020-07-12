@@ -79,6 +79,7 @@ function questionPageTemplate() {
   return `<div class ="container">
             <div class="quiz-container">
               <div>
+                <h3 class="question-number">Question number ${[answerKey.questionNumber+1]} of ${answerKey.questions.length}:<h3>
                 <h2>${question.question}</h2>
               </div>
               <div>
@@ -94,7 +95,7 @@ function questionPageTemplate() {
               </div>
             </div>
             <div class="score">
-              <h3>Current Score: ${answerKey.score}/5</h3>
+              <h3>Current Score: ${answerKey.score}/${answerKey.questions.length}</h3>
             </div>
           </div>`
 };
