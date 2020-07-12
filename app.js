@@ -11,7 +11,7 @@ const answerKey = {
         'Solar flares.',
         'Tiny frogs jammed up highway trucking systems.'
       ],
-      correctAnswer: 'Tiny frogs jam up highway trucking systems.'
+      correctAnswer: 'Tiny frogs jammed up highway trucking systems.'
     },
     {
       question: 'What Disaster happened in September of 2020?',
@@ -21,7 +21,7 @@ const answerKey = {
         'World-wide coffee shortage.',
         'Nation wide paper shortage.'
       ],
-      correctAnswer: 'World-wide coffee shortages.'
+      correctAnswer: 'World-wide coffee shortage.'
     },
     {
       question: 'What Disaster happened in October of 2020?',
@@ -41,7 +41,7 @@ const answerKey = {
         'Timmy\'s icecream opens a wormhole in stonehenge.',
         'Cows stopped producing milk.'
       ],
-      correctAnswer: 'Timmy\'s icecream opens a wormhole in stonehenge.'
+      correctAnswer: 'Timmy\'s icecream opened a wormhole in stonehenge.'
     },
     {
       question: 'What Disaster happened in December of 2020?',
