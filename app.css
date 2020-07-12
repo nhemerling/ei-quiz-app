@@ -8,7 +8,6 @@
 */
 
 html, body {
-  font-family: Arial, Helvetica, sans-serif;
   margin:0px;
   padding:0px;
 }
@@ -17,22 +16,28 @@ body {
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
-  font-family: 'Arial';
   color: #2b2b2b;
 }
 
 header {
   text-align: center;
   margin:5px;
+  max-width: 800px;
+  background-color: #00b64c;
+  border: 1px solid #000000;
+  margin: auto;
+  margin-bottom: 5px;
 }
 
 .image {
   max-width: 80%;
+  margin: 10px;
   border-radius: 10px;
 }
 
 .image2 {
   max-width: 60%;
+  margin: 10px;
   border-radius: 10px;
 }
 
@@ -50,12 +55,14 @@ header {
 
 .quiz-container {
   flex: 1;
+  font-family: helvetica;
   text-align: center;
-  min-height:300px;
+  min-height:350px;
 }
 
 button {
   flex: 1;
+  font-family: helvetica;
   text-align: center;
   justify-content: center;
   font-size: 18px;
@@ -63,19 +70,21 @@ button {
   display: inline-block;
   padding: 7px 10px;
   margin: 15px 0;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   border-radius: 10px;
   background-color: #ffffff;
 }
 
 .submit-button {
   width: 100px;
+  font-family: helvetica;
   margin-left: auto;
   margin-right: auto;
 }
 
 .score {
   flex: 1;
+  font-family: helvetica;
   padding: 5px;
   font-size: 20px;
   text-align: center;
@@ -83,6 +92,7 @@ button {
 
 form {
   text-align: left;
+  font-family: helvetica;
   font-size: 16px;
   padding: 5px;
   display: inline-block;
@@ -97,11 +107,13 @@ input[type="radio"]{
 }
 
 h1 {
+  font-family: helvetica;
   font-size: 20px;
   color: #3a3a3a;
 }
 h2 {
   font-size: 17px;
+  font-family: helvetica;
 }
 p {
   font-size: 20px;
@@ -118,8 +130,10 @@ p {
 /* For Desktop */
 
 @media all and (min-width: 600px) {
-  body {
-    border: 3px solid #66ff66;
+
+
+  .container {
+    border: 3px solid #000000;
   }
  
   .image {
@@ -128,6 +142,7 @@ p {
 
   .image2 {
     max-width: 350px;
+    
   }
   
   p {
@@ -153,17 +168,25 @@ p {
   }
 
   button:hover {
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    background-color: #66ff66;
+    color: #000000;
+    border: 2px solid #000000;
+    background-color: #00b64c;
     transition: 0.4s;
     cursor: pointer;
   }
 
   h1 {
-    font-size: 35px;
+    font-size: 37px;
   }
-
+  header {
+    max-width: 800px;
+    background-color: #00b64c;
+    border-right: 3px solid #000000;
+    border-top: 3px solid #000000;
+    border-left: 3px solid #000000;
+    margin: auto;
+    padding: 5px;
+  }
   body {
     max-width: 800px;
     margin: auto;
