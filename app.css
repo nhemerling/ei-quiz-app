@@ -27,6 +27,7 @@ header {
   border: 1px solid #000000;
   margin: auto;
   margin-bottom: 5px;
+  padding: 0px 10px 0px 10px;
 }
 
 .image {
@@ -110,7 +111,7 @@ h1 {
   font-family: helvetica;
   font-size: 20px;
   color: #3a3a3a;
-  padding: 0px 10px 0px 10px;
+  
 }
 h2 {
   font-size: 17px;
