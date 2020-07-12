@@ -79,7 +79,6 @@ button {
   padding: 5px;
   font-size: 20px;
   text-align: center;
-  
 }
 
 form {
@@ -132,7 +131,10 @@ p {
     font-size: 27px;
     max-width: 400px;
   }
-
+  h2 {
+    font-size: 30px;
+  }
+  
   input[type="radio"] {
     cursor: pointer;
   }
