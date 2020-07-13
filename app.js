@@ -57,7 +57,8 @@ const answerKey = {
   quizStarted: false,
   questionNumber: 0,
   score: 0,
-  finalImage: '<img class="image2" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>'
+  finalImage: '<img class="image2" src="images/monkey-angry.jpg" alt="Angry-little-monkey.jpg"></img>',
+  endStatement: 'You FAIL! The monkeys are angry.' 
 };
 
 //TEMPLATES ARE COMPLETE
@@ -144,8 +145,8 @@ function finalScorePageTemplate() {
               ${answerKey.finalImage}
             </div>
             <div class="results">
-              <h2>Final Score: ${answerKey.score}/5</h2>
-              <h3>We had fun in 2020, didn't we?</h3>
+              <h2>Final Score: ${answerKey.score}/${answerKey.questions.length}</h2>
+              <h3>${answerKey.endStatement}</h3>
             </div>
             <div>
               <button class="retake-quiz">Retake Quiz</button>
@@ -226,10 +227,10 @@ function beforeRetakeQuizClicked() {
 }
 
 function finalImageSwap() {
-  const winImage = '<img class="image2" src="images/monkey-happy.jpg" alt="Happy-little-monkey.jpg"></img>';
   if (answerKey.score === 5) {
     console.log("i work!");
-    answerKey.finalImage = winImage;
+    answerKey.finalImage = '<img class="image2" src="images/monkey-happy.jpg" alt="Happy-little-monkey.jpg"></img>'
+    answerKey.endStatement = 'You WIN! The monkeys are happy.' 
   }
 }
  
@@ -240,6 +241,7 @@ function onDocumentReady() {
   beforeNextQuestionCLicked();
   beforeRetakeQuizClicked();
   finalImageSwap();
+  beforeRetakeQuizClicked();
 };
 
 $(onDocumentReady);

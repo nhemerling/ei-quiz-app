@@ -33,11 +33,13 @@ header {
 .image {
   max-width: 80%;
   margin: 10px;
+  border: 1px solid #000000;
 }
 
 .image2 {
   max-width: 60%;
   margin: 10px;
+  border: 1px solid #000000;
 }
 
 .container {
@@ -128,7 +130,7 @@ p {
 
 /* For Desktop */
 
-@media all and (min-width: 600px) {
+@media screen and (min-width: 600px) {
 
 
   .container {
