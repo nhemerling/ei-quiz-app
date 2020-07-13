@@ -6,6 +6,195 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+
+html, body {
+  margin:0px;
+  padding:0px;
+}
+
+body {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  color: #2b2b2b;
+}
+
+header {
+  text-align: center;
+  margin:5px;
+  max-width: 800px;
+  background-color: #00b64c;
+  border: 1px solid #000000;
+  margin: auto;
+  margin-bottom: 5px;
+  padding: 0px 10px 0px 10px;
+}
+
 .image {
-  width: 400px;
+  max-width: 80%;
+  margin: 10px;
+  border: 1px solid #000000;
+}
+
+.image2 {
+  max-width: 60%;
+  margin: 10px;
+  border: 1px solid #000000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+}
+
+.img-container {
+  flex: 1;
+  text-align: center;
+}
+
+.quiz-container {
+  flex: 1;
+  font-family: helvetica;
+  text-align: center;
+  min-height:350px;
+}
+
+button {
+  flex: 1;
+  font-family: helvetica;
+  text-align: center;
+  justify-content: center;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 10px;
+  margin: 15px 0;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+}
+
+.submit-button {
+  width: 100px;
+  font-family: helvetica;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.score {
+  flex: 1;
+  font-family: helvetica;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+form {
+  text-align: left;
+  font-family: helvetica;
+  font-size: 16px;
+  padding: 5px;
+  display: inline-block;
+  max-width: 300px;
+}
+.flex-label {
+  display: flex;
+}
+input[type="radio"]{
+  transform: scale(1.5);
+  margin-right: 12px;
+}
+
+h1 {
+  font-family: helvetica;
+  font-size: 20px;
+  color: #3a3a3a;
+  
+}
+h2 {
+  font-size: 17px;
+  font-family: helvetica;
+}
+p {
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+}
+.img-container .final-image , .results{
+  text-align: center;
+}
+.question-number {
+  font-size: 15px;
+}
+
+
+/* For Desktop */
+
+@media screen and (min-width: 600px) {
+
+
+  .container {
+    border: 3px solid #000000;
+  }
+ 
+  .image {
+    max-width: 470px;
+  }
+
+  .image2 {
+    max-width: 350px;
+    
+  }
+  
+  p {
+    font-size: 25px;
+  }
+
+  form {
+    font-size: 20px;
+    max-width: 500px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .question-number {
+    font-size: 25px;
+  }
+  input[type="radio"] {
+    cursor: pointer;
+  }
+
+  button {
+    padding: 13px 20px;
+  }
+
+  button:hover {
+    color: #000000;
+    border: 2px solid #000000;
+    background-color: #00b64c;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: 37px;
+  }
+  header {
+    max-width: 800px;
+    background-color: #00b64c;
+    border-right: 3px solid #000000;
+    border-top: 3px solid #000000;
+    border-left: 3px solid #000000;
+    margin: auto;
+    padding: 5px;
+  }
+  body {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .quiz-container {
+    min-height: 500px;
+  }
 }
